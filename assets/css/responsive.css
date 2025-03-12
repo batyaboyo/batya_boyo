@@ -1,0 +1,190 @@
+/* 
+* Pura Organic Agro Tech Ltd - Responsive Stylesheet
+* Version: 1.0
+*/
+
+/* Large Devices (Desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Medium Devices (Tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    section {
+        padding: 4rem 0;
+    }
+    
+    .hero-section {
+        padding: 4rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-image {
+        margin-top: 2rem;
+    }
+    
+    .about-img {
+        margin-bottom: 2rem;
+    }
+    
+    .navbar .btn-primary {
+        margin-top: 15px;
+    }
+    
+    .cta-inner {
+        text-align: center;
+    }
+    
+    .cta-inner .text-end {
+        text-align: center !important;
+        margin-top: 20px;
+    }
+    
+    .contact-info {
+        margin-bottom: 30px;
+    }
+    
+    .footer-about, .footer-links, .footer-contact {
+        margin-bottom: 30px;
+    }
+}
+
+/* Small Devices (Landscape Phones, less than 768px) */
+@media (max-width: 767.98px) {
+    section {
+        padding: 3rem 0;
+    }
+    
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        margin-bottom: 2rem;
+    }
+    
+    .newsletter-inner {
+        padding: 2rem;
+    }
+    
+    .newsletter-form .btn {
+        border-radius: 50px;
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .newsletter-form .form-control {
+        border-radius: 50px;
+    }
+    
+    .top-bar span {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .top-bar .text-end {
+        text-align: left !important;
+        margin-top: 10px;
+    }
+    
+    .filter-wrapper .text-end {
+        text-align: left !important;
+        margin-top: 15px;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 200px;
+        text-align: center;
+    }
+}
+
+/* Extra Small Devices (Portrait Phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .hero-buttons .btn.ms-2 {
+        margin-left: 0 !important;
+    }
+    
+    .footer-bottom .text-end {
+        text-align: left !important;
+        margin-top: 10px;
+    }
+    
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.75rem;
+    }
+    
+    .cta-inner {
+        padding: 2rem;
+    }
+    
+    .cta-inner h2 {
+        font-size: 1.5rem;
+    }
+    
+    .product-card {
+        margin-bottom: 20px;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .play-button i {
+        font-size: 20px;
+    }
+}
+
+/* Larger Mobile Devices */
+@media (max-width: 400px) {
+    .navbar-brand img {
+        height: 45px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .feature-card, .product-card, .benefit-card, .value-card, .team-card {
+        padding: 15px;
+    }
+    
+    .feature-icon, .benefit-icon, .value-icon {
+        font-size: 2.5rem;
+    }
+    
+    .testimonial-slider {
+        padding: 0 20px;
+    }
+}
