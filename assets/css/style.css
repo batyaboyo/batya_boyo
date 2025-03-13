@@ -5,10 +5,10 @@
 
 /* Root Variables */
 :root {
-    --primary-color: #2e7d32;
+    --primary-color: #1b5e20;
     --secondary-color: #81c784;
     --accent-color: #ffd54f;
-    --dark-color: #1b5e20;
+    --dark-color: #E76B2A;
     --light-color: #f1f8e9;
     --text-dark: #333;
     --text-light: #f5f5f5;
@@ -53,6 +53,7 @@ a:hover {
     display: inline-block;
     padding-bottom: 10px;
     margin-bottom: 5px;
+    color: var(--dark-color);
 }
 
 .section-title h2:after {
@@ -107,7 +108,7 @@ img {
 
 /* Top Bar */
 .top-bar {
-    background-color: var(--dark-color);
+    background-color: var(--primary-color);
     color: white;
     padding: 8px 0;
     font-size: 0.9rem;
@@ -121,7 +122,7 @@ img {
     display: inline-block;
     margin-left: 15px;
     font-size: 16px;
-    color: white;
+    color: var(--dark-color);
     transition: var(--transition);
 }
 
@@ -133,11 +134,11 @@ img {
 .navbar {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .navbar-brand img {
-    height: 60px;
+    height: 200px;
 }
 
 .nav-link {
@@ -183,7 +184,7 @@ img {
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
     color: var(--gray-dark);
 }

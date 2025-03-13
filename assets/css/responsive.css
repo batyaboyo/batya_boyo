@@ -21,7 +21,7 @@
     }
     
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     
     .hero-image {
@@ -65,11 +65,11 @@
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     
     .section-title {
-        margin-bottom: 2rem;
+        margin-bottom: 1.6rem;
     }
     
     .newsletter-inner {
@@ -113,9 +113,9 @@
 }
 
 /* Extra Small Devices (Portrait Phones, less than 576px) */
-@media (max-width: 575.98px) {
+@media (max-width: 580px) {
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
     
     .hero-buttons .btn {
@@ -141,7 +141,7 @@
     }
     
     .section-title h2 {
-        font-size: 1.75rem;
+        font-size: 1.4rem;
     }
     
     .cta-inner {
