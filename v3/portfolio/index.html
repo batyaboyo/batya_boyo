@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Batya Boyo - Cybersecurity Specialist and Full-Stack Web Developer.">
+    <title>Batya Boyo | Security & Development</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">&lt;Batya<span class="highlight">.Sec</span>/&gt;</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#" class="btn-small resume-btn">Resume <span class="icon-download">↓</span></a></li>
+                    <!-- Theme Toggle -->
+                    <li>
+                        <button id="themeToggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
+                            <span class="sun-icon">☀️</span>
+                            <span class="moon-icon">🌙</span>
+                        </button>
+                    </li>
+                    <li><a href="#contact" class="btn-small">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container hero-content">
+            <p class="hero-tagline">From SOC Analyst to AI Security Specialist</p>
+            <h1>Securing Critical Systems.<br>Building Robust<br><span class="highlight">Architectures.</span></h1>
+            <p class="hero-sub">I am a <span class="typewriter"
+                    data-text="SOC & DFIR Specialist | Future AI Security Researcher"></span><span
+                    class="cursor">|</span><br>specializing in Defensive Operations, Ethical Hacking, and Adversarial
+                ML.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-value="ABOUT ME">About Me</h2>
+            <div class="about-grid">
+                <!-- Avatar Column -->
+                <div class="about-avatar">
+                    <div class="avatar-frame">
+                        <img src="images/avatar.png" alt="Batya Cyberspace Avatar" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <p>I am a Computer Science graduate with a clear mission: <strong>Master Defense, Dominate Offense,
+                            and Secure the Future.</strong> My career roadmap is built on a solid foundation of
+                        engineering and is evolving through four distinct phases.</p>
+                    <p>Currently executing <strong>Phase 1 (SOC & DFIR)</strong>, leveraging my background in full-stack
+                        development to understand incident response at the code level. My trajectory aims toward
+                        <strong>Red Teaming</strong> and ultimately pioneering research in <strong>AI Security</strong>.
+                    </p>
+                    <p class="mission-statement"><strong>My Roadmap:</strong> SOC/DFIR &rarr; Ethical Hacking &rarr; Red
+                        Teaming &rarr; AI Security Advisor.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">CS</span>
+                        <span class="stat-label">Graduate</span>
+                    </div>
+                    <!-- Combined Stats Image for Visual Impact -->
+                    <div class="stat-card full-width">
+                        <img src="https://github-readme-stats.vercel.app/api?username=batyaboyo&show_icons=true&theme=dark&bg_color=000000&title_color=00ff41&text_color=e0e0e0&icon_color=00ff41&hide_border=true"
+                            alt="GitHub Stats" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title" data-value="TECHNICAL ARSENAL">Technical Arsenal</h2>
+            <div class="skills-grid">
+
+                <!-- Skill Group: Phase 1 & 2 (Defense & Offense) -->
+                <div class="skill-category">
+                    <h3><span class="icon">🛡️</span> SOC & DFIR (Active)</h3>
+                    <ul class="skill-list">
+                        <li>Splunk & ELK Stack</li>
+                        <li>Digital Forensics (Autopsy, KAPE)</li>
+                        <li>Incident Response (NIST)</li>
+                        <li>Network Analysis (Wireshark)</li>
+                        <li>Threat Hunting</li>
+                        <li>Linux Hardening</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Group: Phase 3 & 4 (Future Tech) -->
+                <div class="skill-category">
+                    <h3><span class="icon">🤖</span> Red Team & AI Security</h3>
+                    <ul class="skill-list">
+                        <li>Penetration Testing (Metasploit)</li>
+                        <li>Adversarial Machine Learning</li>
+                        <li>LLM Security (Prompt Injection)</li>
+                        <li>Python for AI (PyTorch basics)</li>
+                        <li>Exploit Development</li>
+                        <li>C & Assembly</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Group: Foundation -->
+                <div class="skill-category">
+                    <h3><span class="icon">⚙️</span> Engineering Core</h3>
+                    <ul class="skill-list">
+                        <li>Python & Django</li>
+                        <li>Bash & PowerShell Scripting</li>
+                        <li>Active Directory & Windows</li>
+                        <li>TCP/IP Networking</li>
+                        <li>Virtualization (VMware/Docker)</li>
+                        <li>Secure Coding (OWASP)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-value="FEATURED PROJECTS">Featured Projects</h2>
+
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
+                <button class="filter-btn" data-filter="dev">Development</button>
+                <button class="filter-btn" data-filter="it">IT & Ops</button>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1: Cyber -->
+                <article class="project-card" data-category="cyber">
+                    <div class="project-thumb">
+                        <img src="images/nids.png" alt="NIDS System Visualization" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="tag cyber">Cybersecurity</span>
+                            <h3>Network Intrusion Detection System</h3>
+                        </div>
+                        <p>A custom Python-based network sniffer and anomaly detector. Utilizes Scapy to analyze packet
+                            headers and flag potential port scanning or suspicious traffic patterns in real-time.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Scapy</span>
+                            <span>Linux</span>
+                            <span>TCP/IP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">View Code &rarr;</a>
+                            <a href="#" class="btn-link disabled" title="Demo runs in CLI">Live Demo N/A</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Web Dev -->
+                <article class="project-card" data-category="dev">
+                    <div class="project-thumb">
+                        <img src="images/vault.png" alt="Secure E-Commerce Vault" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="tag dev">Full-Stack</span>
+                            <h3>SecureVault E-Commerce</h3>
+                        </div>
+                        <p>A resilient e-commerce platform built with Django. Features comprehensive security measures
+                            including CSRF protection, secure header implementation, and role-based access control
+                            (RBAC).</p>
+                        <div class="tech-stack">
+                            <span>Django</span>
+                            <span>PostgreSQL</span>
+                            <span>Stripe API</span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">GitHub &rarr;</a>
+                            <a href="#" class="btn-link">Live Site &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: IT/SysAdmin -->
+                <article class="project-card" data-category="it">
+                    <div class="project-thumb">
+                        <img src="images/ad.png" alt="Active Directory Blueprint" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="tag it">IT & Automation</span>
+                            <h3>AD Lab Auto-Deployer</h3>
+                        </div>
+                        <p>PowerShell automation suite that spins up a complete Active Directory home lab environment on
+                            VirtualBox. Configures Domain Controller, DNS, and User OUs automatically.</p>
+                        <div class="tech-stack">
+                            <span>PowerShell</span>
+                            <span>Active Directory</span>
+                            <span>VirtualBox</span>
+                            <span>Windows Server</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">Repository &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Extra/Hybrid -->
+                <article class="project-card" data-category="dev">
+                    <div class="project-thumb">
+                        <img src="images/logs.png" alt="Log Analytics Dashboard" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="tag cyber">Tooling</span>
+                            <h3>Log Parse & Visualize</h3>
+                        </div>
+                        <p>A lightweight log analysis tool that parses Apache/Nginx access logs and visualizes
+                            geographic traffic distribution and error rate spikes using a dashboard interface.</p>
+                        <div class="tech-stack">
+                            <span>JavaScript</span>
+                            <span>Python</span>
+                            <span>RegEx</span>
+                            <span>Chart.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">GitHub &rarr;</a>
+                            <a href="#" class="btn-link">Live Dashboard &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Journey Section -->
+    <section id="journey" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title" data-value="PROGRESSION PATH">Progression Path</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="date">Phase 4 (Future Goal)</span>
+                        <h3>AI Security Specialist</h3>
+                        <p><strong>The Final Frontier:</strong> Securing AI/ML models against adversarial attacks,
+                            prompt injection, and model inversion. Researching robust AI architectures.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="date">Phase 3 (Next Step)</span>
+                        <h3>Red Teaming & Ethical Hacking</h3>
+                        <p><strong>The Offense:</strong> Transitioning from defense to advanced exploitation. Mastering
+                            C2 frameworks, privilege escalation, and lateral movement.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="date">Phase 2 (Current Status)</span>
+                        <h3>SOC Analyst & DFIR</h3>
+                        <p><strong>The Defense:</strong> Monitoring SIEMs, hunting threats, and performing Digital
+                            Forensics. Understanding how attacks happen to stop them effectively.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="date">Phase 1 (Foundation)</span>
+                        <h3>CS Degree & Full-Stack Engineering</h3>
+                        <p><strong>The Build:</strong> Gained deep understanding of software architecture, databases,
+                            and networking. Built the systems I now aim to protect.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Terminal Section -->
+    <section id="terminal" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title" data-value="INTERACTIVE TERMINAL">Interactive Terminal</h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">guest@batyaboyo:~/portfolio</span>
+                </div>
+                <div class="terminal-body" id="terminalOutput">
+                    <div class="terminal-line">
+                        <span class="prompt">guest@batya:~$</span> <span class="cmd">cat welcome.txt</span>
+                    </div>
+                    <div class="terminal-line">
+                        Welcome to the interactive portfolio CLI. Type <span class="highlight">'help'</span> to see
+                        available commands.
+                    </div>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt">guest@batya:~$</span>
+                    <input type="text" id="terminalInput" autocomplete="off" autofocus>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title" data-value="GET IN TOUCH">Get In Touch</h2>
+            <p class="contact-sub">Open to opportunities in SOC Analysis, Security Engineering, and Backend Development.
+            </p>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <span class="error-msg">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    <span class="error-msg">Please enter a valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can we collaborate?"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                <span class="separator">/</span>
+                <a href="https://github.com/batyaboyo" target="_blank" aria-label="GitHub">GitHub</a>
+                <span class="separator">/</span>
+                <a href="mailto:contact@batyaboyo.com" aria-label="Email">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to Top">
+        &uarr;
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Batya Boyo. Built with Vanilla JS & CSS.</p>
+            <p class="footer-tagline">Secure by Design.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
