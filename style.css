@@ -578,6 +578,12 @@ img {
     border-color: #ffe600;
 }
 
+.tag.ai {
+    color: #b700ff;
+    /* Purple for AI */
+    border-color: #b700ff;
+}
+
 .project-content p {
     color: var(--text-muted);
     font-size: 0.9rem;
