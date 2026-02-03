@@ -40,17 +40,56 @@
 }
 
 /* Light Mode Variables (Optional / Hidden in Hacker Theme? Keeping for utility but styled aptly) */
-/* Light Mode Removed - Enforcing Hacker Theme Only */
---accent-glow: rgba(37, 99, 235, 0.15);
-/* Soft blue glow */
+/* Light Mode - "Light Hacker" Aesthetic (Brutalist/Terminal) */
+[data-theme="light"] {
+    --bg-body: #e6e6e6;
+    /* Standard Terminal Grey */
+    --bg-surface: #f2f2f2;
+    /* Lighter Grey */
+    --bg-alt: #d9d9d9;
+    /* Darker Grey for sections */
 
---border-color: #e2e8f0;
-/* Subtle border */
+    --text-main: #0a0a0a;
+    /* Near Black */
+    --text-muted: #404040;
+    /* Dark Grey */
+
+    --accent-primary: #008f11;
+    /* Matrix Green (Darker for contrast on light) */
+    --accent-secondary: #000000;
+    /* Pure Black accents */
+    --accent-glow: rgba(0, 143, 17, 0.15);
+    /* Green Glow */
+
+    --border-color: #000000;
+    /* Brutalist Black Borders */
 }
 
 [data-theme="light"] body::before {
-    display: none;
-    /* Disable CRT scanlines in light mode */
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%);
+    /* Subtle dark scanlines */
+    background-size: 100% 4px;
+    opacity: 0.3;
+}
+
+[data-theme="light"] .navbar {
+    background-color: rgba(230, 230, 230, 0.95);
+    border-bottom: 2px solid #000;
+}
+
+[data-theme="light"] .project-card,
+[data-theme="light"] .about-stats .stat-card {
+    border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    /* Brutalist Shadow */
+}
+
+[data-theme="light"] .project-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px var(--accent-primary);
+    border-color: #000;
 }
 
 * {
