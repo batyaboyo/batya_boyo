@@ -40,19 +40,17 @@
 }
 
 /* Light Mode Variables (Optional / Hidden in Hacker Theme? Keeping for utility but styled aptly) */
-[data-theme="light"] {
-    --bg-body: #f0f0f0;
-    --bg-surface: #ffffff;
-    --bg-alt: #e5e5e5;
+/* Light Mode Removed - Enforcing Hacker Theme Only */
+--accent-glow: rgba(37, 99, 235, 0.15);
+/* Soft blue glow */
 
-    --text-main: #000000;
-    --text-muted: #555555;
+--border-color: #e2e8f0;
+/* Subtle border */
+}
 
-    --accent-primary: #008f11;
-    --accent-secondary: #00ff41;
-    --accent-glow: rgba(0, 143, 17, 0.1);
-
-    --border-color: #cccccc;
+[data-theme="light"] body::before {
+    display: none;
+    /* Disable CRT scanlines in light mode */
 }
 
 * {
@@ -1205,3 +1203,5 @@ footer {
     transform: scale(1.1);
     opacity: 1;
 }
+
+/* Light Mode Styles Removed */
