@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         response = 'alx-low_level_programming  alx-system_engineering-devops  alx-higher_level_programming  network-ids.py';
                         break;
                     case 'contact':
-                        response = 'Email: contact@batyaboyo.com | GitHub: github.com/batyaboyo';
+                        response = 'Email: batztonnie@gmail.com | LinkedIn: linkedin.com/in/batyaboyo | X: twitter.com/batyaboyo | GitHub: github.com/batyaboyo';
                         break;
                     case 'clear':
                         terminalOutput.innerHTML = '';
