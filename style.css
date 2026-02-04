@@ -23,7 +23,7 @@
     --danger: #ff3333;
     --warning: #ffcc00;
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-    
+
     /* Terminal Theme Variables - Dark */
     --term-bg: rgba(10, 15, 10, 0.95);
     --term-text: var(--accent);
@@ -33,29 +33,68 @@
     --term-prompt: var(--text-secondary);
 }
 
-/* Light Mode - Clean Professional */
+/* Hacker Light Mode - Vintage Hardware Aesthetic */
 [data-theme="light"] {
-    --bg-primary: #f5f7f5;
-    --bg-secondary: #ffffff;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f0f4f0;
-    --text-primary: #1a2e1a;
-    --text-secondary: #4a5f4a;
-    --accent: #00994d;
-    --accent-dim: rgba(0, 153, 77, 0.1);
-    --accent-glow: rgba(0, 153, 77, 0.2);
-    --border: rgba(0, 100, 50, 0.15);
-    --danger: #cc2929;
-    --warning: #cc9900;
-    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --bg-primary: #f0f4f0;
+    --bg-secondary: #e2e8e2;
+    --bg-card: #f8faf8;
+    --bg-card-hover: #ffffff;
+    --text-primary: #0a1f0a;
+    --text-secondary: #3d523d;
+    --accent: #00a352;
+    --accent-dim: rgba(0, 163, 82, 0.1);
+    --accent-glow: rgba(0, 163, 82, 0.2);
+    --border: rgba(0, 60, 30, 0.25);
+    --danger: #b32424;
+    --warning: #b38f00;
+    --shadow: 4px 4px 0px rgba(0, 40, 20, 0.1);
+    /* Blocky shadow */
 
-    /* Terminal Theme Variables - Light */
-    --term-bg: rgba(245, 247, 245, 0.98);
-    --term-text: #1a2e1a;
-    --term-header: #e0e4e0;
-    --term-title: #4a5f4a;
-    --term-border: rgba(0, 100, 50, 0.2);
-    --term-prompt: #00994d;
+    /* Terminal Theme Variables - Hacker Light */
+    --term-bg: #e8ede8;
+    --term-text: #0a1f0a;
+    --term-header: #d0d6d0;
+    --term-title: #2d452d;
+    --term-border: #004d26;
+    --term-prompt: #008040;
+}
+
+[data-theme="light"] body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(rgba(0, 60, 30, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* CRT Scanlines Effect */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg,
+            rgba(255, 0, 0, 0.02),
+            rgba(0, 255, 0, 0.01),
+            rgba(0, 0, 255, 0.02));
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+[data-theme="light"] .scanlines {
+    opacity: 0.15;
+    background: linear-gradient(rgba(0, 60, 30, 0) 50%,
+            rgba(0, 60, 30, 0.05) 50%);
+    background-size: 100% 4px;
 }
 
 /* ===== Loading Screen & Terminal ===== */
@@ -114,9 +153,17 @@
     border-radius: 50%;
 }
 
-.close { background: #ff5f56; }
-.minimize { background: #ffbd2e; }
-.maximize { background: #27c93f; }
+.close {
+    background: #ff5f56;
+}
+
+.minimize {
+    background: #ffbd2e;
+}
+
+.maximize {
+    background: #27c93f;
+}
 
 .terminal-title {
     flex: 1;
@@ -124,7 +171,8 @@
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--term-title);
-    margin-right: 60px; /* Offset for controls */
+    margin-right: 60px;
+    /* Offset for controls */
 }
 
 .terminal-body {
@@ -142,16 +190,47 @@
     display: block;
 }
 
-.terminal-line.success { color: var(--accent); }
-.terminal-line.info { color: #3399ff; }
-.terminal-line.warning { color: var(--warning); }
-.terminal-line.error { color: var(--danger); }
+.terminal-line.success {
+    color: var(--accent);
+}
+
+.terminal-line.info {
+    color: #3399ff;
+}
+
+.terminal-line.warning {
+    color: var(--warning);
+}
+
+.terminal-line.error {
+    color: var(--danger);
+}
 
 .terminal-input-line {
     padding: 10px 20px 20px;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.terminal-input-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-visual-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    white-space: pre-wrap;
+    word-break: break-all;
+    width: 100%;
+    color: var(--term-text);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 1rem;
 }
 
 .terminal-prompt {
@@ -163,19 +242,37 @@
     background: transparent;
     border: none;
     outline: none;
-    color: var(--term-text);
-    font-family: var(--font-mono);
+    color: transparent;
+    /* Hide text, we use visual display */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 1rem;
     flex: 1;
+    width: 100%;
     caret-color: transparent;
+    /* Hide real cursor */
 }
 
+/* The dynamic cursor inside the visual display */
 .terminal-cursor {
-    width: 8px;
-    height: 1.2rem;
-    background: var(--accent);
     display: inline-block;
-    animation: blink 0.8s infinite;
+    width: 0.6em;
+    height: 1.1em;
+    background: var(--term-text);
+    margin-left: 0;
+    animation: terminal-blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes terminal-blink {
+
+    from,
+    to {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .terminal-skip {
@@ -196,19 +293,6 @@
     color: var(--accent);
     border-color: var(--accent);
     background: var(--accent-dim);
-}
-
-/* CRT Scanlines Effect */
-.scanlines {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom,
-            rgba(18, 16, 16, 0) 50%,
-            rgba(0, 0, 0, 0.25) 50%);
-    background-size: 100% 4px;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 0.15;
 }
 
 @keyframes blink {
@@ -387,17 +471,29 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 16px 32px;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all var(--transition);
-    font-family: var(--font-heading);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+[data-theme="light"] .btn {
+    border-radius: 4px;
+    border: 2px solid var(--border);
 }
 
 .btn-primary {
     background: var(--accent);
-    color: var(--bg-primary);
+    color: #000;
+}
+
+[data-theme="light"] .btn-primary {
+    color: #fff;
+    background: #008040;
 }
 
 .btn-primary:hover {
@@ -406,8 +502,14 @@ img {
 }
 
 .btn-outline {
-    border: 2px solid var(--border);
-    color: var(--text-primary);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+[data-theme="light"] .btn-outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
 }
 
 .btn-outline:hover {
@@ -806,8 +908,15 @@ img {
 }
 
 .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: var(--text-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+[data-theme="light"] .about-text {
+    font-family: var(--font-mono);
+    font-size: 1rem;
 }
 
 .about-highlights {
@@ -855,14 +964,39 @@ img {
 .skill-category {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 32px;
-    transition: all var(--transition);
+    border-radius: 12px;
+    padding: 24px;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+[data-theme="light"] .skill-category {
+    border: 2px solid var(--border);
+    border-radius: 4px;
 }
 
 .skill-category:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--accent-dim);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    /* Blocky default */
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    margin: 4px;
+}
+
+[data-theme="light"] .skill-tag {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    color: var(--text-primary);
 }
 
 .skill-category-icon {
@@ -915,21 +1049,32 @@ img {
     flex-wrap: wrap;
 }
 
-.filter-btn {
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-secondary);
+.category-btn {
+    padding: 8px 20px;
+    background: var(--bg-secondary);
     border: 1px solid var(--border);
-    transition: all var(--transition);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
+[data-theme="light"] .category-btn {
+    border-radius: 4px;
+    border: 2px solid var(--border);
+}
+
+.category-btn.active {
     background: var(--accent);
-    color: var(--bg-primary);
+    color: #000;
     border-color: var(--accent);
+}
+
+[data-theme="light"] .category-btn.active {
+    color: #fff;
+    background: #008040;
 }
 
 .projects-grid {
@@ -941,12 +1086,19 @@ img {
 .project-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 12px;
     overflow: hidden;
-    transition: all var(--transition);
+    transition: var(--transition);
     position: relative;
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
+}
+
+[data-theme="light"] .project-card {
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    /* Blockier in light mode */
 }
 
 .project-card:hover {
@@ -1106,10 +1258,19 @@ img {
     background: var(--border);
 }
 
+[data-theme="light"] .journey-timeline::before {
+    width: 4px;
+    background: var(--accent);
+}
+
 .journey-item {
     position: relative;
     padding-left: 40px;
     padding-bottom: 48px;
+}
+
+[data-theme="light"] .journey-item {
+    padding-left: 50px;
 }
 
 .journey-item:last-child {
@@ -1125,6 +1286,15 @@ img {
     background: var(--accent);
     border: 4px solid var(--bg-primary);
     border-radius: 50%;
+}
+
+[data-theme="light"] .journey-marker {
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    /* Blocky marker */
+    border: 2px solid #000;
 }
 
 .journey-item.current .journey-marker {
@@ -1167,6 +1337,12 @@ img {
     color: var(--text-secondary);
 }
 
+[data-theme="light"] .journey-tag {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+}
+
 /* ===== Contact ===== */
 #contact {
     background: var(--bg-secondary);
@@ -1204,6 +1380,13 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--accent);
+}
+
+[data-theme="light"] .contact-icon {
+    border-radius: 4px;
+    border: 2px solid var(--border);
+    background: #000;
     color: var(--accent);
 }
 
@@ -1289,6 +1472,10 @@ img {
     background: var(--bg-primary);
     padding: 40px 0;
     border-top: 1px solid var(--border);
+}
+
+[data-theme="light"] .footer {
+    border-top: 4px solid var(--border);
 }
 
 .footer-content {

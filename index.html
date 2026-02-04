@@ -34,8 +34,10 @@
             </div>
             <div class="terminal-input-line">
                 <span class="terminal-prompt">Guest:$</span>
-                <input type="text" id="terminalInput" autofocus spellcheck="false" autocomplete="off">
-                <span class="terminal-cursor">|</span>
+                <div class="terminal-input-wrapper">
+                    <div id="terminalVisualDisplay" class="terminal-visual-display"></div>
+                    <input type="text" id="terminalInput" autofocus spellcheck="false" autocomplete="off">
+                </div>
             </div>
         </div>
         <button class="terminal-skip" id="skipLoader">Skip to Portfolio [Esc]</button>

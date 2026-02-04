@@ -120,29 +120,70 @@ function revealSite() {
     setTimeout(() => loader.remove(), 1000);
 }
 
+const syncVisualInput = () => {
+    const terminalInput = document.getElementById('terminalInput');
+    const visualDisplay = document.getElementById('terminalVisualDisplay');
+    if (!terminalInput || !visualDisplay) return;
+
+    const value = terminalInput.value;
+    const start = terminalInput.selectionStart;
+    const end = terminalInput.selectionEnd;
+
+    // Handle character escaping for HTML
+    const escape = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/ /g, "&nbsp;");
+
+    if (start === end) {
+        // Normal cursor
+        const before = value.substring(0, start);
+        const at = value.substring(start, start + 1) || " ";
+        const after = value.substring(start + 1);
+
+        visualDisplay.innerHTML = `${escape(before)}<span class="terminal-cursor">${escape(at)}</span>${escape(after)}`;
+    } else {
+        // Selection handling (optional but good for realism)
+        const before = value.substring(0, start);
+        const middle = value.substring(start, end);
+        const after = value.substring(end);
+        visualDisplay.innerHTML = `${escape(before)}<span class="terminal-cursor">${escape(middle)}</span>${escape(after)}`;
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const terminalInput = document.getElementById('terminalInput');
     const terminalContainer = document.querySelector('.terminal-container');
     const terminalBody = document.getElementById('terminalBody'); // Added for scroll
 
     // Keep focus on input
-    terminalContainer?.addEventListener('click', () => terminalInput?.focus());
+    terminalContainer?.addEventListener('click', () => {
+        terminalInput?.focus();
+        syncVisualInput();
+    });
+
+    terminalInput?.addEventListener('input', syncVisualInput);
+    terminalInput?.addEventListener('click', syncVisualInput);
+    terminalInput?.addEventListener('keyup', syncVisualInput);
 
     terminalInput?.addEventListener('keydown', (e) => {
+        // Immediate sync for movement keys
+        setTimeout(syncVisualInput, 0);
+
         if (e.key === 'ArrowUp') {
             e.preventDefault();
             if (historyIndex < commandHistory.length - 1) {
                 historyIndex++;
                 terminalInput.value = commandHistory[commandHistory.length - 1 - historyIndex];
+                syncVisualInput();
             }
         } else if (e.key === 'ArrowDown') {
             e.preventDefault();
             if (historyIndex > 0) {
                 historyIndex--;
                 terminalInput.value = commandHistory[commandHistory.length - 1 - historyIndex];
+                syncVisualInput();
             } else {
                 historyIndex = -1;
                 terminalInput.value = "";
+                syncVisualInput();
             }
         }
 
@@ -199,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             terminalInput.value = "";
+            syncVisualInput();
             terminalBody.scrollTop = terminalBody.scrollHeight;
         }
     });
