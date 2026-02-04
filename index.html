@@ -8,6 +8,12 @@
         content="Cybersecurity professional & Full-Stack Developer specializing in SOC operations, ethical hacking, and Django development.">
     <title>Batya Boyo | Cybersecurity & Full-Stack Developer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -88,6 +94,12 @@
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="https://x.com/batyaboyo" target="_blank" class="social-link" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z" />
                         </svg>
                     </a>
                     <a href="mailto:hello@batyaboyo.dev" class="social-link" aria-label="Email">
@@ -244,22 +256,25 @@
             <div class="projects-grid">
                 <!-- Security Project 1 -->
                 <article class="project-card fade-in" data-category="security">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop"
+                            alt="SME SOC" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Security</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🛡</div>
-                        <span class="project-category">Security</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">SME SOC-in-a-Box</h3>
                         <p class="project-problem"><strong>Problem:</strong> Small businesses lack affordable security
-                            monitoring solutions, leaving them vulnerable to attacks.</p>
+                            monitoring solutions, leaving them vulnerable to undetected attacks.</p>
                         <p class="project-solution"><strong>Solution:</strong> Lightweight, containerized SOC platform
-                            with log aggregation, alert correlation, and incident tracking for resource-constrained
-                            environments.</p>
+                            with log aggregation, alerting, and incident tracking.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Wazuh</span>
                             <span class="tech-tag">ELK Stack</span>
                             <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Python</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -269,21 +284,24 @@
                 </article>
                 <!-- Security Project 2 -->
                 <article class="project-card fade-in" data-category="security">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop"
+                            alt="Phishing Defense" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Security</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🎣</div>
-                        <span class="project-category">Security</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Phishing Defense Platform</h3>
                         <p class="project-problem"><strong>Problem:</strong> Organizations struggle to train employees
                             against phishing and track awareness program effectiveness.</p>
-                        <p class="project-solution"><strong>Solution:</strong> Platform for phishing simulation
-                            campaigns with email analysis, user tracking, risk scoring, and training recommendations.
-                        </p>
+                        <p class="project-solution"><strong>Solution:</strong> Simulation campaigns with email analysis,
+                            risk scoring, and automated training workflows.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Email APIs</span>
                             <span class="tech-tag">PostgreSQL</span>
                         </div>
                         <div class="project-links">
@@ -294,21 +312,25 @@
                 </article>
                 <!-- Security Project 3 -->
                 <article class="project-card fade-in" data-category="security">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&h=400&fit=crop"
+                            alt="IR Automation" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Security</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">⚡</div>
-                        <span class="project-category">Security</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Incident Response Automation</h3>
                         <p class="project-problem"><strong>Problem:</strong> Manual incident response is slow,
-                            inconsistent, and prone to analyst fatigue during high-volume alerts.</p>
+                            inconsistent, and prone to analyst fatigue during high alert volumes.</p>
                         <p class="project-solution"><strong>Solution:</strong> Automated enrichment pipeline that
-                            correlates IOCs, queries threat intel, and generates actionable response playbooks.</p>
+                            correlates IOCs and generates actionable response playbooks.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">MISP</span>
-                            <span class="tech-tag">VirusTotal API</span>
-                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">VirusTotal</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -318,21 +340,25 @@
                 </article>
                 <!-- Security Project 4 -->
                 <article class="project-card fade-in" data-category="security">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                            alt="Vuln Mgmt" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Security</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">📊</div>
-                        <span class="project-category">Security</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Vulnerability Management Dashboard</h3>
                         <p class="project-problem"><strong>Problem:</strong> Security teams lack visibility into
                             vulnerability status, remediation progress, and risk prioritization.</p>
                         <p class="project-solution"><strong>Solution:</strong> Centralized dashboard tracking CVEs,
-                            asset criticality, patch status, and SLA compliance with executive reporting.</p>
+                            asset criticality, and SLA compliance with executive reporting.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
                             <span class="tech-tag">Chart.js</span>
                             <span class="tech-tag">OpenVAS</span>
-                            <span class="tech-tag">REST API</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -342,20 +368,24 @@
                 </article>
                 <!-- Security Project 5 -->
                 <article class="project-card fade-in" data-category="security">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=600&h=400&fit=crop"
+                            alt="Detection Lab" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Security</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🔍</div>
-                        <span class="project-category">Security</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Detection Engineering Lab</h3>
                         <p class="project-problem"><strong>Problem:</strong> Generic SIEM rules create noise and miss
                             targeted attacks specific to organization environments.</p>
                         <p class="project-solution"><strong>Solution:</strong> Custom detection rules mapped to MITRE
-                            ATT&CK with testing framework, false positive analysis, and rule versioning.</p>
+                            ATT&CK with testing framework and false positive analysis.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Sigma</span>
                             <span class="tech-tag">Splunk</span>
-                            <span class="tech-tag">MITRE ATT&CK</span>
                             <span class="tech-tag">YAML</span>
                         </div>
                         <div class="project-links">
@@ -366,21 +396,25 @@
                 </article>
                 <!-- Django Project 1 -->
                 <article class="project-card fade-in" data-category="django">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
+                            alt="Case Mgmt" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Django</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">📋</div>
-                        <span class="project-category">Django</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Incident Case Management System</h3>
-                        <p class="project-problem"><strong>Problem:</strong> Security teams use spreadsheets and emails
-                            to track incidents, losing context and evidence chain.</p>
+                        <p class="project-problem"><strong>Problem:</strong> Security teams use spreadsheets to track
+                            incidents, losing context and evidence chain-of-custody.</p>
                         <p class="project-solution"><strong>Solution:</strong> Django-based case management with
-                            evidence upload, timeline tracking, team assignments, and audit logging.</p>
+                            evidence upload, timeline tracking, and team assignments.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
                             <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">Celery</span>
-                            <span class="tech-tag">Bootstrap</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -390,21 +424,25 @@
                 </article>
                 <!-- Django Project 2 -->
                 <article class="project-card fade-in" data-category="django">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                            alt="SaaS platform" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Django</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🏢</div>
-                        <span class="project-category">Django</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Secure Multi-Tenant SaaS Platform</h3>
                         <p class="project-problem"><strong>Problem:</strong> Multi-tenant applications often have data
                             leakage risks and insufficient access controls between tenants.</p>
                         <p class="project-solution"><strong>Solution:</strong> SaaS boilerplate with tenant isolation,
-                            role-based permissions, subscription management, and security audit trails.</p>
+                            role-based permissions, and security audit trails.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
-                            <span class="tech-tag">django-tenants</span>
+                            <span class="tech-tag">Tenants</span>
                             <span class="tech-tag">Stripe</span>
-                            <span class="tech-tag">Redis</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -414,20 +452,24 @@
                 </article>
                 <!-- Django Project 3 -->
                 <article class="project-card fade-in" data-category="django">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop"
+                            alt="LMS" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Django</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">📚</div>
-                        <span class="project-category">Django</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Cybersecurity Learning Platform</h3>
                         <p class="project-problem"><strong>Problem:</strong> Security learners lack structured paths and
                             progress tracking across fragmented learning resources.</p>
                         <p class="project-solution"><strong>Solution:</strong> LMS with curated security paths, hands-on
-                            lab integration, progress tracking, and certification preparation modules.</p>
+                            lab integration, and progress tracking.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">Docker</span>
                         </div>
                         <div class="project-links">
@@ -438,20 +480,24 @@
                 </article>
                 <!-- Django Project 4 -->
                 <article class="project-card fade-in" data-category="django">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop"
+                            alt="Auth Service" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Django</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🔑</div>
-                        <span class="project-category">Django</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Secure Authentication Microservice</h3>
                         <p class="project-problem"><strong>Problem:</strong> Applications often implement authentication
                             poorly, creating security vulnerabilities and user friction.</p>
                         <p class="project-solution"><strong>Solution:</strong> Standalone auth service with JWT tokens,
-                            MFA support, rate limiting, password policies, and session management.</p>
+                            MFA support, rate limiting, and session management.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django REST</span>
                             <span class="tech-tag">JWT</span>
-                            <span class="tech-tag">TOTP</span>
                             <span class="tech-tag">Redis</span>
                         </div>
                         <div class="project-links">
@@ -462,21 +508,25 @@
                 </article>
                 <!-- Django Project 5 -->
                 <article class="project-card fade-in" data-category="django">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop"
+                            alt="Vuln tracker" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">Django</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🐛</div>
-                        <span class="project-category">Django</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Vulnerability Tracking Web App</h3>
                         <p class="project-problem"><strong>Problem:</strong> Security teams need to manage vulnerability
                             lifecycle from discovery through remediation verification.</p>
                         <p class="project-solution"><strong>Solution:</strong> Web app for tracking vulnerabilities with
-                            asset mapping, owner assignments, SLA tracking, and remediation workflows.</p>
+                            asset mapping, owner assignments, and remediation workflows.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
                             <span class="tech-tag">HTMX</span>
                             <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Chart.js</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -486,20 +536,24 @@
                 </article>
                 <!-- IT Project 1 -->
                 <article class="project-card fade-in" data-category="it">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=600&h=400&fit=crop"
+                            alt="Ticketing" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🎫</div>
-                        <span class="project-category">IT Systems</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">IT Support Ticketing System</h3>
                         <p class="project-problem"><strong>Problem:</strong> Help desk teams lose track of requests,
-                            lack SLA visibility, and struggle with prioritization.</p>
+                            lack SLA visibility, and struggle with task prioritization.</p>
                         <p class="project-solution"><strong>Solution:</strong> Ticketing system with
-                            auto-categorization, priority queues, SLA tracking, and technician performance metrics.</p>
+                            auto-categorization, priority queues, and technician performance metrics.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Email Integration</span>
                             <span class="tech-tag">SQLite</span>
                         </div>
                         <div class="project-links">
@@ -510,21 +564,25 @@
                 </article>
                 <!-- IT Project 2 -->
                 <article class="project-card fade-in" data-category="it">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop"
+                            alt="Monitoring" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">📡</div>
-                        <span class="project-category">IT Systems</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Network Monitoring & Alerting</h3>
-                        <p class="project-problem"><strong>Problem:</strong> IT teams discover outages from user
+                        <p class="project-problem"><strong>Problem:</strong> IT teams often discover outages from user
                             complaints rather than proactive monitoring systems.</p>
                         <p class="project-solution"><strong>Solution:</strong> Monitoring solution with ICMP/TCP checks,
-                            uptime tracking, alert escalation, and historical availability reports.</p>
+                            uptime tracking, and instant alert escalation.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Flask</span>
                             <span class="tech-tag">SNMP</span>
-                            <span class="tech-tag">Telegram API</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -534,21 +592,25 @@
                 </article>
                 <!-- IT Project 3 -->
                 <article class="project-card fade-in" data-category="it">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop"
+                            alt="Hardening" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">🔒</div>
-                        <span class="project-category">IT Systems</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Linux Server Hardening Toolkit</h3>
                         <p class="project-problem"><strong>Problem:</strong> Default Linux installations lack security
-                            hardening, leaving servers vulnerable to common attacks.</p>
+                            hardening, leaving servers vulnerable to common exploits.</p>
                         <p class="project-solution"><strong>Solution:</strong> Automated hardening scripts covering SSH,
-                            firewall, user policies, logging, and CIS benchmark compliance checks.</p>
+                            firewall, and CIS benchmark compliance checks.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Bash</span>
                             <span class="tech-tag">Ansible</span>
-                            <span class="tech-tag">CIS Benchmarks</span>
-                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">CIS Bench</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -558,20 +620,24 @@
                 </article>
                 <!-- IT Project 4 -->
                 <article class="project-card fade-in" data-category="it">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop"
+                            alt="Backup" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">💾</div>
-                        <span class="project-category">IT Systems</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Backup & Disaster Recovery</h3>
-                        <p class="project-problem"><strong>Problem:</strong> Organizations discover backup failures only
-                            during emergencies when data recovery is critical.</p>
+                        <p class="project-problem"><strong>Problem:</strong> Organizations often discover backup
+                            failures only during emergencies when data recovery is critical.</p>
                         <p class="project-solution"><strong>Solution:</strong> Automated backup system with integrity
-                            verification, restore testing, retention policies, and failure alerting.</p>
+                            verification, restore testing, and failure alerting.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Bash</span>
                             <span class="tech-tag">rsync</span>
-                            <span class="tech-tag">Cron</span>
                             <span class="tech-tag">AWS S3</span>
                         </div>
                         <div class="project-links">
@@ -582,21 +648,25 @@
                 </article>
                 <!-- IT Project 5 -->
                 <article class="project-card fade-in" data-category="it">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop"
+                            alt="Knowledge Base" class="project-image">
+                        <div class="project-image-overlay"></div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
                     <div class="project-header">
                         <div class="project-icon">📖</div>
-                        <span class="project-category">IT Systems</span>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Internal IT Knowledge Base</h3>
                         <p class="project-problem"><strong>Problem:</strong> Institutional knowledge lives in individual
                             heads, creating bottlenecks and inconsistent support.</p>
                         <p class="project-solution"><strong>Solution:</strong> Searchable knowledge base with SOPs,
-                            troubleshooting guides, runbooks, and version-controlled documentation.</p>
+                            troubleshooting guides, and runbooks for IT teams.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Django</span>
                             <span class="tech-tag">Markdown</span>
-                            <span class="tech-tag">Full-text Search</span>
                             <span class="tech-tag">Git</span>
+                            <span class="tech-tag">VitePress</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link">GitHub →</a>
@@ -708,6 +778,13 @@
                         <div class="contact-item-text">
                             <span>GitHub</span>
                             <a href="https://github.com/batyaboyo" target="_blank">github.com/batyaboyo</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">𝕏</div>
+                        <div class="contact-item-text">
+                            <span>X (Twitter)</span>
+                            <a href="https://x.com/batyaboyo" target="_blank">x.com/batyaboyo</a>
                         </div>
                     </div>
                 </div>
