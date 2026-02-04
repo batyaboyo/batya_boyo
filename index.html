@@ -1,164 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgNect - Cultivating the Future of Ugandan Farming</title>
+    <meta name="description"
+        content="Cybersecurity professional & Full-Stack Developer specializing in SOC operations, ethical hacking, and Django development.">
+    <title>Batya Boyo | Cybersecurity & Full-Stack Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <span>Ag</span>Nect
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">&gt;_BB</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="cta-button"><a href="#demo">Get Started</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#journey" class="nav-link">Journey</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Cultivating the Future of <span class="highlight">Ugandan Farming</span></h1>
-            <p class="value-prop">AgNect empowers Ugandan farmers with data-driven insights to maximize crop yields, minimize losses from climate change, and connect directly with buyers.</p>
-            <div class="hero-cta">
-                <a href="#demo" class="cta-primary">Try AgNect Free</a>
-                <a href="#learn" class="cta-secondary">Learn More</a>
+            <div class="nav-cta">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+                <a href="#contact" class="btn btn-primary btn-sm">Get In Touch</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hero-image"></div>
-            <div class="data-overlay">
-                <div class="data-point dp1"></div>
-                <div class="data-point dp2"></div>
-                <div class="data-point dp3"></div>
-                <div class="data-point dp4"></div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#journey" class="nav-link">Journey</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">
+                    <span class="dot"></span>
+                    Available for opportunities
+                </div>
+                <h1 class="hero-title">Securing Systems.<br>Building Solutions.</h1>
+                <p class="hero-subtitle">Cybersecurity professional and Full-Stack Developer focused on building secure,
+                    scalable applications and defending against modern threats.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>15+</h4>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>3</h4>
+                        <p>Core Domains</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>100%</h4>
+                        <p>Commitment</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="section-header">
-            <h2>About <span class="highlight">AgNect</span></h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Born from a vision to transform Ugandan agriculture through technology, AgNect bridges the gap between traditional farming practices and cutting-edge innovations.</p>
-                <p>Our team of agricultural experts, data scientists, and rural development specialists works directly with farmers to create solutions that address their unique challenges.</p>
-                <p>We believe in climate-smart agriculture that respects local knowledge while embracing the power of data to create a more sustainable and profitable future for Ugandan farmers.</p>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Who I Am</h2>
             </div>
-            <div class="about-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="15000">0</span>
-                    <span class="stat-label">Farmers Connected</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="30">0</span>
-                    <span class="stat-label">% Yield Increase</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="25">0</span>
-                    <span class="stat-label">Districts Served</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="solutions" class="solutions">
-        <div class="section-header">
-            <h2>Our <span class="highlight">Solutions</span></h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="solution-tabs">
-            <div class="tab-header">
-                <div class="tab active" data-tab="precision">Precision Farming</div>
-                <div class="tab" data-tab="supply">Supply Chain</div>
-                <div class="tab" data-tab="finance">Financial Access</div>
-            </div>
-            <div class="tab-content">
-                <div class="tab-pane active" id="precision">
-                    <div class="solution-grid">
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-cloud-sun-rain"></i>
+            <div class="about-grid">
+                <div class="about-visual fade-in">
+                    <div class="about-card">
+                        <div class="about-card-header">
+                            <div class="about-avatar">BB</div>
+                            <div>
+                                <p class="about-card-title">Batya Boyo</p>
+                                <p class="about-card-role">Security Engineer & Developer</p>
                             </div>
-                            <h3>Climate-Smart Insights</h3>
-                            <p>Get localized weather forecasts and alerts to protect your crops from extreme weather events. Plan your planting and harvesting with confidence.</p>
                         </div>
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-bug"></i>
-                            </div>
-                            <h3>AI-Powered Pest Detection</h3>
-                            <p>Identify and prevent pest infestations early with our advanced image recognition technology. Simply take a photo with your phone.</p>
-                        </div>
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-seedling"></i>
-                            </div>
-                            <h3>Soil Health Monitoring</h3>
-                            <p>Optimize fertilizer use and improve soil fertility with real-time sensor data. Save money while improving your soil quality.</p>
+                        <div class="about-tags">
+                            <span class="about-tag">SOC Operations</span>
+                            <span class="about-tag">Ethical Hacking</span>
+                            <span class="about-tag">Django</span>
+                            <span class="about-tag">Linux</span>
+                            <span class="about-tag">SIEM</span>
+                            <span class="about-tag">Python</span>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="supply">
-                    <div class="solution-grid">
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h3>Direct Market Access</h3>
-                            <p>Connect with verified buyers and get fair prices for your produce. Cut out middlemen and increase your profits.</p>
+                <div class="about-text fade-in">
+                    <h3>Computer Science graduate with a security-first mindset</h3>
+                    <p>I specialize in cybersecurity operations and full-stack web development. My focus is on building
+                        secure applications and implementing defensive security measures that protect organizations from
+                        real-world threats.</p>
+                    <p>I combine technical skills in SOC operations, incident response, and vulnerability management
+                        with Django backend development to create solutions that are both functional and secure by
+                        design.</p>
+                    <div class="about-highlights">
+                        <div class="about-highlight">
+                            <div class="about-highlight-icon">🛡</div>
+                            <p><strong>Security Operations:</strong> Log analysis, threat detection, incident response,
+                                and SIEM management</p>
                         </div>
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>Mobile Payments</h3>
-                            <p>Securely receive payments directly to your mobile money account. Fast, secure, and convenient transactions.</p>
+                        <div class="about-highlight">
+                            <div class="about-highlight-icon">⚡</div>
+                            <p><strong>Development:</strong> Secure Django applications with proper authentication,
+                                authorization, and data protection</p>
                         </div>
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-warehouse"></i>
-                            </div>
-                            <h3>Reduced Post-Harvest Losses</h3>
-                            <p>Access storage and transportation solutions to minimize waste. Preserve the quality of your harvest and sell when prices are best.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="finance">
-                    <div class="solution-grid">
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
-                            <h3>Microloans</h3>
-                            <p>Access affordable financing based on your farm data and production history. Get the capital you need when you need it.</p>
-                        </div>
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3>Crop Insurance</h3>
-                            <p>Protect your investment with affordable, data-driven crop insurance that pays out quickly when disaster strikes.</p>
-                        </div>
-                        <div class="solution-card">
-                            <div class="solution-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>Financial Planning</h3>
-                            <p>Get personalized financial advice and planning tools to help you manage your farm as a business.</p>
+                        <div class="about-highlight">
+                            <div class="about-highlight-icon">🎯</div>
+                            <p><strong>Goal:</strong> Red Team specialist combining offensive security with development
+                                expertise</p>
                         </div>
                     </div>
                 </div>
@@ -166,197 +133,573 @@
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
-        <div class="section-header">
-            <h2>How <span class="highlight">AgNect</span> Works</h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="process-container">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Sign Up</h3>
-                    <p>Register with your mobile phone - no smartphone required. Available in multiple local languages.</p>
-                </div>
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Technical Skills</span>
+                <h2 class="section-title">What I Do</h2>
             </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Connect Your Farm</h3>
-                    <p>Share basic information about your crops and location to receive personalized recommendations.</p>
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Get Insights</h3>
-                    <p>Receive regular updates about weather, market prices, and farming best practices via SMS or app.</p>
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3>Connect with Buyers</h3>
-                    <p>List your harvest and connect with verified buyers who offer fair prices.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <div class="section-header">
-            <h2>What Farmers <span class="highlight">Say</span></h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="testimonial-slider">
-            <div class="testimonial-card active">
-                <div class="farmer-image farmer-1"></div>
-                <div class="quote">
-                    <p>"AgNect helped me increase my maize yield by 30%. The weather alerts saved my crop during last season's unexpected rains."</p>
-                    <div class="farmer-info">
-                        <h4>Sarah Namukasa</h4>
-                        <p>Maize Farmer, Mubende District</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="farmer-image farmer-2"></div>
-                <div class="quote">
-                    <p>"I can now sell my coffee directly to buyers in Kampala, thanks to AgNect. My income has improved and payments come directly to my phone."</p>
-                    <div class="farmer-info">
-                        <h4>John Mukasa</h4>
-                        <p>Coffee Farmer, Masaka District</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="farmer-image farmer-3"></div>
-                <div class="quote">
-                    <p>"The pest detection feature helped me identify a disease in my banana plantation before it spread. AgNect even connected me with the right treatment."</p>
-                    <div class="farmer-info">
-                        <h4>Grace Birungi</h4>
-                        <p>Banana Farmer, Mbale District</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slider-controls">
-            <span class="control active" data-slide="0"></span>
-            <span class="control" data-slide="1"></span>
-            <span class="control" data-slide="2"></span>
-        </div>
-    </section>
-
-    <section id="partners" class="partners">
-        <div class="section-header">
-            <h2>Our <span class="highlight">Partners</span></h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="partner-logos">
-            <div class="partner-logo"></div>
-            <div class="partner-logo"></div>
-            <div class="partner-logo"></div>
-            <div class="partner-logo"></div>
-            <div class="partner-logo"></div>
-        </div>
-    </section>
-
-    <section id="demo" class="demo">
-        <div class="demo-content">
-            <h2>Ready to Transform Your Farm?</h2>
-            <p>Get started with AgNect today and see the difference data can make for your farm.</p>
-            <form class="demo-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number" required>
-                </div>
-                <div class="form-group">
-                    <select required>
-                        <option value="" disabled selected>Select Your District</option>
-                        <option value="kampala">Kampala</option>
-                        <option value="mbarara">Mbarara</option>
-                        <option value="gulu">Gulu</option>
-                        <option value="mbale">Mbale</option>
-                        <option value="masaka">Masaka</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select required>
-                        <option value="" disabled selected>Primary Crop</option>
-                        <option value="maize">Maize</option>
-                        <option value="coffee">Coffee</option>
-                        <option value="banana">Banana</option>
-                        <option value="cassava">Cassava</option>
-                        <option value="beans">Beans</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <button type="submit" class="cta-primary">Get Started Free</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <span>Ag</span>Nect
-            </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <div class="skill-category-icon">🔐</div>
+                    <h3>Cybersecurity</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">Networking Fundamentals & Protocols</li>
+                        <li class="skill-item">Linux & Windows Security</li>
+                        <li class="skill-item">SOC Operations & Monitoring</li>
+                        <li class="skill-item">SIEM & Log Analysis</li>
+                        <li class="skill-item">Incident Response & Triage</li>
+                        <li class="skill-item">MITRE ATT&CK Framework</li>
+                        <li class="skill-item">Vulnerability Assessment</li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="#precision">Precision Farming</a></li>
-                        <li><a href="#supply">Supply Chain</a></li>
-                        <li><a href="#finance">Financial Services</a></li>
-                        <li><a href="#training">Training</a></li>
+                <div class="skill-category fade-in">
+                    <div class="skill-category-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">HTML5, CSS3, JavaScript</li>
+                        <li class="skill-item">Django Backend Development</li>
+                        <li class="skill-item">RESTful API Design</li>
+                        <li class="skill-item">PostgreSQL & Database Design</li>
+                        <li class="skill-item">Secure Authentication (JWT, MFA)</li>
+                        <li class="skill-item">Git Version Control</li>
+                        <li class="skill-item">Responsive Design</li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#faq">FAQs</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
+                <div class="skill-category fade-in">
+                    <div class="skill-category-icon">🖥</div>
+                    <h3>IT / Systems</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">System Administration</li>
+                        <li class="skill-item">Network Troubleshooting</li>
+                        <li class="skill-item">Security Hardening</li>
+                        <li class="skill-item">Backup & Recovery</li>
+                        <li class="skill-item">Documentation & SOPs</li>
+                        <li class="skill-item">Virtualization (VMware, VirtualBox)</li>
+                        <li class="skill-item">Scripting (Bash, Python)</li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="security">Cybersecurity</button>
+                <button class="filter-btn" data-filter="django">Django</button>
+                <button class="filter-btn" data-filter="it">IT Systems</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Security Project 1 -->
+                <article class="project-card fade-in" data-category="security">
+                    <div class="project-header">
+                        <div class="project-icon">🛡</div>
+                        <span class="project-category">Security</span>
                     </div>
-                    <div class="language-selector">
-                        <select>
-                            <option value="en">English</option>
-                            <option value="lg">Luganda</option>
-                            <option value="sw">Swahili</option>
-                            <option value="rn">Runyankole</option>
-                        </select>
+                    <div class="project-content">
+                        <h3 class="project-title">SME SOC-in-a-Box</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Small businesses lack affordable security
+                            monitoring solutions, leaving them vulnerable to attacks.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Lightweight, containerized SOC platform
+                            with log aggregation, alert correlation, and incident tracking for resource-constrained
+                            environments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Wazuh</span>
+                            <span class="tech-tag">ELK Stack</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Security Project 2 -->
+                <article class="project-card fade-in" data-category="security">
+                    <div class="project-header">
+                        <div class="project-icon">🎣</div>
+                        <span class="project-category">Security</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Phishing Defense Platform</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Organizations struggle to train employees
+                            against phishing and track awareness program effectiveness.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Platform for phishing simulation
+                            campaigns with email analysis, user tracking, risk scoring, and training recommendations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Email APIs</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Security Project 3 -->
+                <article class="project-card fade-in" data-category="security">
+                    <div class="project-header">
+                        <div class="project-icon">⚡</div>
+                        <span class="project-category">Security</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Incident Response Automation</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Manual incident response is slow,
+                            inconsistent, and prone to analyst fatigue during high-volume alerts.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Automated enrichment pipeline that
+                            correlates IOCs, queries threat intel, and generates actionable response playbooks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MISP</span>
+                            <span class="tech-tag">VirusTotal API</span>
+                            <span class="tech-tag">Bash</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Security Project 4 -->
+                <article class="project-card fade-in" data-category="security">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <span class="project-category">Security</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Vulnerability Management Dashboard</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Security teams lack visibility into
+                            vulnerability status, remediation progress, and risk prioritization.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Centralized dashboard tracking CVEs,
+                            asset criticality, patch status, and SLA compliance with executive reporting.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">OpenVAS</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Security Project 5 -->
+                <article class="project-card fade-in" data-category="security">
+                    <div class="project-header">
+                        <div class="project-icon">🔍</div>
+                        <span class="project-category">Security</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Detection Engineering Lab</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Generic SIEM rules create noise and miss
+                            targeted attacks specific to organization environments.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Custom detection rules mapped to MITRE
+                            ATT&CK with testing framework, false positive analysis, and rule versioning.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Sigma</span>
+                            <span class="tech-tag">Splunk</span>
+                            <span class="tech-tag">MITRE ATT&CK</span>
+                            <span class="tech-tag">YAML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Django Project 1 -->
+                <article class="project-card fade-in" data-category="django">
+                    <div class="project-header">
+                        <div class="project-icon">📋</div>
+                        <span class="project-category">Django</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Incident Case Management System</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Security teams use spreadsheets and emails
+                            to track incidents, losing context and evidence chain.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Django-based case management with
+                            evidence upload, timeline tracking, team assignments, and audit logging.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Celery</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Django Project 2 -->
+                <article class="project-card fade-in" data-category="django">
+                    <div class="project-header">
+                        <div class="project-icon">🏢</div>
+                        <span class="project-category">Django</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Secure Multi-Tenant SaaS Platform</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Multi-tenant applications often have data
+                            leakage risks and insufficient access controls between tenants.</p>
+                        <p class="project-solution"><strong>Solution:</strong> SaaS boilerplate with tenant isolation,
+                            role-based permissions, subscription management, and security audit trails.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">django-tenants</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Django Project 3 -->
+                <article class="project-card fade-in" data-category="django">
+                    <div class="project-header">
+                        <div class="project-icon">📚</div>
+                        <span class="project-category">Django</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cybersecurity Learning Platform</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Security learners lack structured paths and
+                            progress tracking across fragmented learning resources.</p>
+                        <p class="project-solution"><strong>Solution:</strong> LMS with curated security paths, hands-on
+                            lab integration, progress tracking, and certification preparation modules.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Django Project 4 -->
+                <article class="project-card fade-in" data-category="django">
+                    <div class="project-header">
+                        <div class="project-icon">🔑</div>
+                        <span class="project-category">Django</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Secure Authentication Microservice</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Applications often implement authentication
+                            poorly, creating security vulnerabilities and user friction.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Standalone auth service with JWT tokens,
+                            MFA support, rate limiting, password policies, and session management.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django REST</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">TOTP</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Django Project 5 -->
+                <article class="project-card fade-in" data-category="django">
+                    <div class="project-header">
+                        <div class="project-icon">🐛</div>
+                        <span class="project-category">Django</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Vulnerability Tracking Web App</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Security teams need to manage vulnerability
+                            lifecycle from discovery through remediation verification.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Web app for tracking vulnerabilities with
+                            asset mapping, owner assignments, SLA tracking, and remediation workflows.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">HTMX</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- IT Project 1 -->
+                <article class="project-card fade-in" data-category="it">
+                    <div class="project-header">
+                        <div class="project-icon">🎫</div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">IT Support Ticketing System</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Help desk teams lose track of requests,
+                            lack SLA visibility, and struggle with prioritization.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Ticketing system with
+                            auto-categorization, priority queues, SLA tracking, and technician performance metrics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Email Integration</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- IT Project 2 -->
+                <article class="project-card fade-in" data-category="it">
+                    <div class="project-header">
+                        <div class="project-icon">📡</div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Network Monitoring & Alerting</h3>
+                        <p class="project-problem"><strong>Problem:</strong> IT teams discover outages from user
+                            complaints rather than proactive monitoring systems.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Monitoring solution with ICMP/TCP checks,
+                            uptime tracking, alert escalation, and historical availability reports.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SNMP</span>
+                            <span class="tech-tag">Telegram API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- IT Project 3 -->
+                <article class="project-card fade-in" data-category="it">
+                    <div class="project-header">
+                        <div class="project-icon">🔒</div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Linux Server Hardening Toolkit</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Default Linux installations lack security
+                            hardening, leaving servers vulnerable to common attacks.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Automated hardening scripts covering SSH,
+                            firewall, user policies, logging, and CIS benchmark compliance checks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">CIS Benchmarks</span>
+                            <span class="tech-tag">Linux</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- IT Project 4 -->
+                <article class="project-card fade-in" data-category="it">
+                    <div class="project-header">
+                        <div class="project-icon">💾</div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Backup & Disaster Recovery</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Organizations discover backup failures only
+                            during emergencies when data recovery is critical.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Automated backup system with integrity
+                            verification, restore testing, retention policies, and failure alerting.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">rsync</span>
+                            <span class="tech-tag">Cron</span>
+                            <span class="tech-tag">AWS S3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- IT Project 5 -->
+                <article class="project-card fade-in" data-category="it">
+                    <div class="project-header">
+                        <div class="project-icon">📖</div>
+                        <span class="project-category">IT Systems</span>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Internal IT Knowledge Base</h3>
+                        <p class="project-problem"><strong>Problem:</strong> Institutional knowledge lives in individual
+                            heads, creating bottlenecks and inconsistent support.</p>
+                        <p class="project-solution"><strong>Solution:</strong> Searchable knowledge base with SOPs,
+                            troubleshooting guides, runbooks, and version-controlled documentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Markdown</span>
+                            <span class="tech-tag">Full-text Search</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub →</a>
+                            <a href="#" class="project-link">Demo →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section" id="journey">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Career Path</span>
+                <h2 class="section-title">My Journey</h2>
+            </div>
+            <div class="journey-timeline">
+                <div class="journey-item fade-in">
+                    <div class="journey-marker"></div>
+                    <span class="journey-phase">Foundation</span>
+                    <h3 class="journey-title">Computer Science & Development</h3>
+                    <p class="journey-desc">Built strong programming fundamentals through formal education and hands-on
+                        projects. Developed full-stack applications with Django while learning secure coding practices
+                        and web security principles.</p>
+                    <div class="journey-highlights">
+                        <span class="journey-tag">Python</span>
+                        <span class="journey-tag">Django</span>
+                        <span class="journey-tag">Web Security</span>
+                        <span class="journey-tag">Databases</span>
+                    </div>
+                </div>
+                <div class="journey-item current fade-in">
+                    <div class="journey-marker"></div>
+                    <span class="journey-phase">Current Focus</span>
+                    <h3 class="journey-title">SOC Analyst & Blue Team</h3>
+                    <p class="journey-desc">Developing expertise in security operations, log analysis, and incident
+                        response. Building practical experience through home labs, CTF competitions, and security
+                        monitoring projects. Focused on SIEM operations and threat detection.</p>
+                    <div class="journey-highlights">
+                        <span class="journey-tag">SIEM</span>
+                        <span class="journey-tag">Log Analysis</span>
+                        <span class="journey-tag">Incident Response</span>
+                        <span class="journey-tag">MITRE ATT&CK</span>
+                        <span class="journey-tag">TryHackMe</span>
+                    </div>
+                </div>
+                <div class="journey-item fade-in">
+                    <div class="journey-marker"></div>
+                    <span class="journey-phase">Next Step</span>
+                    <h3 class="journey-title">Ethical Hacking & Penetration Testing</h3>
+                    <p class="journey-desc">Transitioning to offensive security to understand attacker techniques.
+                        Pursuing hands-on penetration testing skills through platforms like HackTheBox and working
+                        toward OSCP certification.</p>
+                    <div class="journey-highlights">
+                        <span class="journey-tag">Pentesting</span>
+                        <span class="journey-tag">Web App Security</span>
+                        <span class="journey-tag">OSCP Path</span>
+                        <span class="journey-tag">Bug Bounty</span>
+                    </div>
+                </div>
+                <div class="journey-item fade-in">
+                    <div class="journey-marker"></div>
+                    <span class="journey-phase">Long-term Goal</span>
+                    <h3 class="journey-title">Red Team Operations</h3>
+                    <p class="journey-desc">Ultimate goal is to join or lead red team engagements, simulating advanced
+                        persistent threats and helping organizations improve their security posture through realistic
+                        attack simulations.</p>
+                    <div class="journey-highlights">
+                        <span class="journey-tag">Adversary Simulation</span>
+                        <span class="journey-tag">Red Team Ops</span>
+                        <span class="journey-tag">Purple Teaming</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 AgNect. All rights reserved.</p>
-            <p>Made with ❤️ in Uganda</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3>Open to Opportunities</h3>
+                    <p>I'm actively seeking roles in cybersecurity operations, security engineering, and full-stack
+                        development. Whether you have a position, project, or just want to connect, I'd love to hear
+                        from you.</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉</div>
+                        <div class="contact-item-text">
+                            <span>Email</span>
+                            <a href="mailto:hello@batyaboyo.dev">hello@batyaboyo.dev</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <div class="contact-item-text">
+                            <span>LinkedIn</span>
+                            <a href="https://linkedin.com/in/batyaboyo" target="_blank">linkedin.com/in/batyaboyo</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <div class="contact-item-text">
+                            <span>GitHub</span>
+                            <a href="https://github.com/batyaboyo" target="_blank">github.com/batyaboyo</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name">
+                            <p class="form-error"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                            <p class="form-error"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message..."></textarea>
+                        <p class="form-error"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#" class="footer-logo">&gt;_BB</a>
+            <p class="footer-text">&copy; 2024 Batya Boyo. Built with security in mind.</p>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
