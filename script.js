@@ -14,11 +14,34 @@ const BOOT_LOGS = [
 
 let terminalState = 'PROFILING'; // PROFILING, COMMAND
 let terminalMode = null; // techy, standard
+const commandHistory = [];
+let historyIndex = -1;
 
 const TECHY_COMMANDS = {
-    'help': () => `Available commands:<br> - [whoami]: Identity summary<br> - [ls]: List sections<br> - [nmap]: Scan network<br> - [netstat]: Network stats<br> - [ssh]: Remote access<br> - [grep]: Search files<br> - [sudo access]: Enter portfolio<br> - [clear]: Reset terminal`,
+    'help': () => `Available commands:<br> - [whoami]: Identity summary<br> - [ls]: List sections<br> - [nmap]: Scan network<br> - [netstat]: Network stats<br> - [ssh]: Remote access<br> - [grep]: Search files<br> - [top]: Process monitor<br> - [ping]: Network check<br> - [history]: Command log<br> - [date/pwd/uname]: System info<br> - [sudo access]: Enter portfolio<br> - [clear]: Reset terminal`,
     'whoami': () => `Batya Boyo — Cybersecurity Specialist & Full-Stack Developer.<br>Focus: SOC Operations, Pentesting, and Django Security.`,
-    'ls': () => `<span class="info">/about</span><br><span class="info">/skills</span><br><span class="info">/projects</span><br><span class="info">/journey</span><br><span class="info">/contact</span>`,
+    'ls': (args) => {
+        if (args.includes('-la')) {
+            return `<span class="info">drwxr-xr-x&nbsp;&nbsp;2&nbsp;guest&nbsp;guest&nbsp;&nbsp;4096&nbsp;Feb&nbsp;4&nbsp;15:20&nbsp;.</span><br>
+                    <span class="info">drwxr-xr-x&nbsp;&nbsp;4&nbsp;root&nbsp;&nbsp;root&nbsp;&nbsp;&nbsp;4096&nbsp;Feb&nbsp;4&nbsp;12:00&nbsp;..</span><br>
+                    <span class="info">-rw-r--r--&nbsp;&nbsp;1&nbsp;guest&nbsp;guest&nbsp;&nbsp;&nbsp;220&nbsp;Feb&nbsp;4&nbsp;15:21&nbsp;.bashrc</span><br>
+                    <span class="info">-rw-r--r--&nbsp;&nbsp;1&nbsp;guest&nbsp;guest&nbsp;&nbsp;&nbsp;807&nbsp;Feb&nbsp;4&nbsp;15:22&nbsp;.profile</span><br>
+                    <span class="info">drwxr-xr-x&nbsp;&nbsp;2&nbsp;guest&nbsp;guest&nbsp;&nbsp;4096&nbsp;Feb&nbsp;4&nbsp;15:25&nbsp;about</span><br>
+                    <span class="info">drwxr-xr-x&nbsp;&nbsp;2&nbsp;guest&nbsp;guest&nbsp;&nbsp;4096&nbsp;Feb&nbsp;4&nbsp;15:26&nbsp;skills</span><br>
+                    <span class="info">drwxr-xr-x&nbsp;&nbsp;2&nbsp;guest&nbsp;guest&nbsp;&nbsp;4096&nbsp;Feb&nbsp;4&nbsp;15:27&nbsp;projects</span><br>
+                    <span class="info">drwxr-xr-x&nbsp;&nbsp;2&nbsp;guest&nbsp;guest&nbsp;&nbsp;4096&nbsp;Feb&nbsp;4&nbsp;15:28&nbsp;contact</span>`;
+        }
+        return `<span class="info">about</span>&nbsp;&nbsp;&nbsp;<span class="info">skills</span>&nbsp;&nbsp;&nbsp;<span class="info">projects</span>&nbsp;&nbsp;&nbsp;<span class="info">journey</span>&nbsp;&nbsp;&nbsp;<span class="info">contact</span>`;
+    },
+    'date': () => new Date().toString(),
+    'pwd': () => `/home/guest/portfolio_v1`,
+    'uname': (args) => args.includes('-a') ? `Linux BBOYO-OS 5.15.0-generic #54-Ubuntu SMP x86_64 GNU/Linux` : `Linux`,
+    'history': () => commandHistory.join('<br>'),
+    'ping': (args) => {
+        const target = args[0] || 'batyaboyo.dev';
+        return `PING ${target} (1.1.1.1): 56 data bytes<br>64 bytes from 1.1.1.1: icmp_seq=0 ttl=57 time=12.4 ms<br>64 bytes from 1.1.1.1: icmp_seq=1 ttl=57 time=13.1 ms<br>--- ${target} ping statistics ---<br>2 packets transmitted, 2 packets received, 0.0% packet loss`;
+    },
+    'top': () => `tasks: 1 total, 1 running, 0 sleeping<br>%Cpu(s): 0.3 us, 0.1 sy, 0.0 ni, 99.6 id<br><br>PID&nbsp;&nbsp;USER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PR&nbsp;&nbsp;NI&nbsp;&nbsp;&nbsp;&nbsp;VIRT&nbsp;&nbsp;&nbsp;&nbsp;RES&nbsp;&nbsp;&nbsp;&nbsp;SHR&nbsp;S&nbsp;&nbsp;%CPU&nbsp;&nbsp;%MEM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TIME+&nbsp;COMMAND<br>124&nbsp;&nbsp;guest&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;12.4g&nbsp;&nbsp;1.2g&nbsp;&nbsp;42.1m&nbsp;R&nbsp;&nbsp;&nbsp;0.7&nbsp;&nbsp;&nbsp;4.2&nbsp;&nbsp;&nbsp;0:12.45&nbsp;portfolio_os`,
     'nmap': () => `<span class="info">Scanning targets...</span><br>PORT&nbsp;&nbsp;&nbsp;&nbsp;STATE&nbsp;&nbsp;SERVICE<br>22/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;ssh<br>80/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;http<br>443/tcp&nbsp;open&nbsp;&nbsp;&nbsp;https<br>Nmap done: 1 IP address scanned.`,
     'netstat': () => `Active Internet connections (w/o servers)<br>Proto Recv-Q Send-Q Local Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foreign Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State<br>tcp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 192.168.1.15:443&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;batyaboyo.dev:5432&nbsp;&nbsp;&nbsp;&nbsp;ESTABLISHED`,
     'ssh': () => `<span class="warning">Authentication successful. Welcome to the secure shell.</span>`,
@@ -41,7 +64,7 @@ const STANDARD_COMMANDS = {
     'help': () => `Welcome! Try these simple commands:<br> - [about]: Learn about me<br> - [projects]: See my work<br> - [contact]: How to reach me<br> - [enter]: Start the site<br> - [clear]: Reset screen`,
     'about': () => `I'm Batya Boyo, a web developer and cybersecurity enthusiast. I build secure and beautiful websites.`,
     'projects': () => `I have 15 projects in my portfolio, focusing on Django, security tools, and IT systems.`,
-    'contact': () => `Email: hello@batyaboyo.dev<br>X (Twitter): @batyaboyo`,
+    'contact': () => `Email: batztonnie@gmail.com<br>X (Twitter): @batyaboyo`,
     'enter': () => {
         printLine({ text: "Loading portfolio... Welcome!", type: "success" });
         setTimeout(revealSite, 1000);
@@ -100,52 +123,83 @@ function revealSite() {
 document.addEventListener('DOMContentLoaded', () => {
     const terminalInput = document.getElementById('terminalInput');
     const terminalContainer = document.querySelector('.terminal-container');
+    const terminalBody = document.getElementById('terminalBody'); // Added for scroll
 
     // Keep focus on input
     terminalContainer?.addEventListener('click', () => terminalInput?.focus());
 
     terminalInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex++;
+                terminalInput.value = commandHistory[commandHistory.length - 1 - historyIndex];
+            }
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIndex > 0) {
+                historyIndex--;
+                terminalInput.value = commandHistory[commandHistory.length - 1 - historyIndex];
+            } else {
+                historyIndex = -1;
+                terminalInput.value = "";
+            }
+        }
+
         if (e.key === 'Enter') {
-            const input = terminalInput.value.trim().toLowerCase();
-            if (!input) return;
+            const rawInput = terminalInput.value.trim();
+            const inputParts = rawInput.toLowerCase().split(' ');
+            const cmd = inputParts[0];
+            const args = inputParts.slice(1);
+
+            if (!rawInput) return;
+
+            commandHistory.push(rawInput);
+            historyIndex = -1;
 
             if (terminalState === 'PROFILING') {
-                if (input === 'y' || input === 'yes') {
+                if (cmd === 'y' || cmd === 'yes') {
                     terminalMode = 'techy';
                     terminalState = 'COMMAND';
-                    printLine({ text: `Guest:$ ${input}`, type: "info" });
+                    printLine({ text: `Guest:$ ${rawInput}`, type: "info" });
                     printLine({ text: "Hacker Mode Enabled. Type 'help' for advanced tools.", type: "success" });
                     document.querySelector('.terminal-prompt').textContent = "BBOYO_ROOT:#";
-                } else if (input === 'n' || input === 'no') {
+                } else if (cmd === 'n' || cmd === 'no') {
                     terminalMode = 'standard';
                     terminalState = 'COMMAND';
-                    printLine({ text: `Guest:$ ${input}`, type: "info" });
+                    printLine({ text: `Guest:$ ${rawInput}`, type: "info" });
                     printLine({ text: "Standard Mode Enabled. Type 'help' for simple commands.", type: "success" });
                     document.querySelector('.terminal-prompt').textContent = "User:$";
                 } else {
-                    printLine({ text: `Guest:$ ${input}`, type: "info" });
+                    printLine({ text: `Guest:$ ${rawInput}`, type: "info" });
                     printLine({ text: "Please enter 'Y' for Tech-Savvy or 'N' for Standard user.", type: "warning" });
                 }
             } else {
-                printLine({ text: `${document.querySelector('.terminal-prompt').textContent} ${input}`, type: "info" });
+                printLine({ text: `${document.querySelector('.terminal-prompt').textContent} ${rawInput}`, type: "info" });
 
-                const cmdSet = terminalMode === 'techy' ? TECHY_COMMANDS : STANDARD_COMMANDS;
-
-                if (cmdSet[input]) {
-                    const response = cmdSet[input]();
-                    if (response) printLine({ text: response, type: "success" });
+                // Special case for 'sudo access' due to space
+                if (rawInput.toLowerCase() === 'sudo access') {
+                    TECHY_COMMANDS['sudo access']();
                 } else {
-                    if (terminalMode === 'techy' && STANDARD_COMMANDS[input]) {
-                        printLine({ text: `Command available in Standard mode. Use techy tools or type 'help'.`, type: "info" });
-                    } else if (terminalMode === 'standard' && TECHY_COMMANDS[input]) {
-                        printLine({ text: `Command reserved for tech-savvy sessions. Try 'about' or 'help'.`, type: "error" });
+                    const cmdSet = terminalMode === 'techy' ? TECHY_COMMANDS : STANDARD_COMMANDS;
+
+                    if (cmdSet[cmd]) {
+                        const response = cmdSet[cmd](args);
+                        if (response) printLine({ text: response, type: "success" });
                     } else {
-                        printLine({ text: `Command not found: ${input}. Type 'help' for options.`, type: "error" });
+                        if (terminalMode === 'techy' && STANDARD_COMMANDS[cmd]) {
+                            printLine({ text: `Command available in Standard mode. Use techy tools or type 'help'.`, type: "info" });
+                        } else if (terminalMode === 'standard' && TECHY_COMMANDS[cmd]) {
+                            printLine({ text: `Command reserved for tech-savvy sessions. Try 'about' or 'help'.`, type: "error" });
+                        } else {
+                            printLine({ text: `Command not found: ${cmd}. Type 'help' for options.`, type: "error" });
+                        }
                     }
                 }
             }
 
             terminalInput.value = "";
+            terminalBody.scrollTop = terminalBody.scrollHeight;
         }
     });
 
