@@ -1,8 +1,18 @@
+// ===== Loading Screen =====
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+        // Start animations after loader hides
+        animateCounters();
+        startTypingAnimation();
+    }, 1500);
+});
+
 // ===== Theme Toggle =====
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 
-// Load saved theme or default to dark
 const savedTheme = localStorage.getItem('theme') || 'dark';
 html.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
@@ -17,6 +27,90 @@ themeToggle.addEventListener('click', () => {
     html.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
+});
+
+// ===== Custom Cursor Glow =====
+const cursorGlow = document.getElementById('cursorGlow');
+
+document.addEventListener('mousemove', (e) => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top = e.clientY + 'px';
+});
+
+// ===== Typing Animation =====
+const typingTexts = [
+    'Securing Systems.',
+    'Building Solutions.',
+    'Defending Networks.',
+    'Writing Clean Code.'
+];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById('typingText');
+
+function startTypingAnimation() {
+    const currentText = typingTexts[textIndex];
+
+    if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentText.length) {
+        typeSpeed = 2000; // Pause at end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % typingTexts.length;
+        typeSpeed = 500; // Pause before next word
+    }
+
+    setTimeout(startTypingAnimation, typeSpeed);
+}
+
+// ===== Animated Counters =====
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+
+        updateCounter();
+    });
+}
+
+// ===== Back to Top Button =====
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ===== Navigation Scroll Effect =====
@@ -76,6 +170,7 @@ filterBtns.forEach(btn => {
         projectCards.forEach(card => {
             if (filter === 'all' || card.dataset.category === filter) {
                 card.classList.remove('hidden');
+                card.style.animation = 'fadeInUp 0.4s ease forwards';
             } else {
                 card.classList.add('hidden');
             }
@@ -171,3 +266,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ===== Add fadeInUp animation =====
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
