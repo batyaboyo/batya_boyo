@@ -1,12 +1,166 @@
-// ===== Loading Screen =====
-window.addEventListener('load', () => {
+// ===== Terminal Loader Engine =====
+const BOOT_LOGS = [
+    { text: "[ OK ] Initializing Portfolio Kernel v1.0.4...", type: "success" },
+    { text: "[ OK ] Loading Security Modules...", type: "success" },
+    { text: "[ INFO ] Establishing secure connection to batyaboyo.dev...", type: "info" },
+    { text: "[ OK ] Network encryption active (AES-256-GCM)", type: "success" },
+    { text: "[ INFO ] Scanning environment for vulnerabilities...", type: "info" },
+    { text: "[ OK ] System clean. Identity verified.", type: "success" },
+    { text: "--------------------------------------------------", type: "info" },
+    { text: "WELCOME TO BBOYO TERMINAL OS (v1.0)", type: "success" },
+    { text: "--------------------------------------------------", type: "info" },
+    { text: "User profile unknown. Are you tech-savvy? (Y/N)", type: "warning" }
+];
+
+let terminalState = 'PROFILING'; // PROFILING, COMMAND
+let terminalMode = null; // techy, standard
+
+const TECHY_COMMANDS = {
+    'help': () => `Available commands:<br> - [whoami]: Identity summary<br> - [ls]: List sections<br> - [nmap]: Scan network<br> - [netstat]: Network stats<br> - [ssh]: Remote access<br> - [grep]: Search files<br> - [sudo access]: Enter portfolio<br> - [clear]: Reset terminal`,
+    'whoami': () => `Batya Boyo — Cybersecurity Specialist & Full-Stack Developer.<br>Focus: SOC Operations, Pentesting, and Django Security.`,
+    'ls': () => `<span class="info">/about</span><br><span class="info">/skills</span><br><span class="info">/projects</span><br><span class="info">/journey</span><br><span class="info">/contact</span>`,
+    'nmap': () => `<span class="info">Scanning targets...</span><br>PORT&nbsp;&nbsp;&nbsp;&nbsp;STATE&nbsp;&nbsp;SERVICE<br>22/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;ssh<br>80/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;http<br>443/tcp&nbsp;open&nbsp;&nbsp;&nbsp;https<br>Nmap done: 1 IP address scanned.`,
+    'netstat': () => `Active Internet connections (w/o servers)<br>Proto Recv-Q Send-Q Local Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Foreign Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;State<br>tcp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 192.168.1.15:443&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;batyaboyo.dev:5432&nbsp;&nbsp;&nbsp;&nbsp;ESTABLISHED`,
+    'ssh': () => `<span class="warning">Authentication successful. Welcome to the secure shell.</span>`,
+    'grep': () => `Usage: grep [PATTERN] [FILE]...<br>Try: grep "secret" config.sys`,
+    'status': () => `<span class="success">Firewall: ACTIVE</span><br><span class="success">Uptime: 99.9%</span><br><span class="info">Intrusion Detection: STANDBY</span>`,
+    'sudo access': () => {
+        printLine({ text: "Access granted. De-obfuscating portfolio structure...", type: "success" });
+        setTimeout(revealSite, 1000);
+        return "";
+    },
+    'access': () => `<span class="error">Permission denied: user 'guest' lacks elevated privileges. Try 'sudo access'.</span>`,
+    'clear': () => {
+        const body = document.getElementById('terminalBody');
+        if (body) body.innerHTML = "";
+        return "";
+    }
+};
+
+const STANDARD_COMMANDS = {
+    'help': () => `Welcome! Try these simple commands:<br> - [about]: Learn about me<br> - [projects]: See my work<br> - [contact]: How to reach me<br> - [enter]: Start the site<br> - [clear]: Reset screen`,
+    'about': () => `I'm Batya Boyo, a web developer and cybersecurity enthusiast. I build secure and beautiful websites.`,
+    'projects': () => `I have 15 projects in my portfolio, focusing on Django, security tools, and IT systems.`,
+    'contact': () => `Email: hello@batyaboyo.dev<br>X (Twitter): @batyaboyo`,
+    'enter': () => {
+        printLine({ text: "Loading portfolio... Welcome!", type: "success" });
+        setTimeout(revealSite, 1000);
+        return "";
+    },
+    'clear': () => {
+        const body = document.getElementById('terminalBody');
+        if (body) body.innerHTML = "";
+        return "";
+    }
+};
+
+async function runBootSequence() {
+    const terminalBody = document.getElementById('terminalBody');
+    const terminalInput = document.getElementById('terminalInput');
+
+    if (!terminalBody || !terminalInput) {
+        console.error("Terminal elements not found. Revealing site.");
+        revealSite();
+        return;
+    }
+
+    for (const log of BOOT_LOGS) {
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 150 + 50));
+        printLine(log);
+    }
+    terminalInput.focus();
+}
+
+function printLine({ text, type }) {
+    const terminalBody = document.getElementById('terminalBody');
+    if (!terminalBody) return;
+
+    const line = document.createElement('div');
+    line.className = `terminal-line ${type}`;
+    line.innerHTML = text;
+    terminalBody.appendChild(line);
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+}
+
+// Global scope helpers
+function revealSite() {
     const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-        // Start animations after loader hides
-        animateCounters();
-        startTypingAnimation();
-    }, 1500);
+    if (!loader) return;
+
+    loader.classList.add('hidden');
+    document.body.style.overflow = '';
+
+    // Start site animations
+    if (typeof animateCounters === 'function') animateCounters();
+    if (typeof startTypingAnimation === 'function') startTypingAnimation();
+
+    setTimeout(() => loader.remove(), 1000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalContainer = document.querySelector('.terminal-container');
+
+    // Keep focus on input
+    terminalContainer?.addEventListener('click', () => terminalInput?.focus());
+
+    terminalInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const input = terminalInput.value.trim().toLowerCase();
+            if (!input) return;
+
+            if (terminalState === 'PROFILING') {
+                if (input === 'y' || input === 'yes') {
+                    terminalMode = 'techy';
+                    terminalState = 'COMMAND';
+                    printLine({ text: `Guest:$ ${input}`, type: "info" });
+                    printLine({ text: "Hacker Mode Enabled. Type 'help' for advanced tools.", type: "success" });
+                    document.querySelector('.terminal-prompt').textContent = "BBOYO_ROOT:#";
+                } else if (input === 'n' || input === 'no') {
+                    terminalMode = 'standard';
+                    terminalState = 'COMMAND';
+                    printLine({ text: `Guest:$ ${input}`, type: "info" });
+                    printLine({ text: "Standard Mode Enabled. Type 'help' for simple commands.", type: "success" });
+                    document.querySelector('.terminal-prompt').textContent = "User:$";
+                } else {
+                    printLine({ text: `Guest:$ ${input}`, type: "info" });
+                    printLine({ text: "Please enter 'Y' for Tech-Savvy or 'N' for Standard user.", type: "warning" });
+                }
+            } else {
+                printLine({ text: `${document.querySelector('.terminal-prompt').textContent} ${input}`, type: "info" });
+
+                const cmdSet = terminalMode === 'techy' ? TECHY_COMMANDS : STANDARD_COMMANDS;
+
+                if (cmdSet[input]) {
+                    const response = cmdSet[input]();
+                    if (response) printLine({ text: response, type: "success" });
+                } else {
+                    if (terminalMode === 'techy' && STANDARD_COMMANDS[input]) {
+                        printLine({ text: `Command available in Standard mode. Use techy tools or type 'help'.`, type: "info" });
+                    } else if (terminalMode === 'standard' && TECHY_COMMANDS[input]) {
+                        printLine({ text: `Command reserved for tech-savvy sessions. Try 'about' or 'help'.`, type: "error" });
+                    } else {
+                        printLine({ text: `Command not found: ${input}. Type 'help' for options.`, type: "error" });
+                    }
+                }
+            }
+
+            terminalInput.value = "";
+        }
+    });
+
+    document.getElementById('skipLoader')?.addEventListener('click', revealSite);
+
+    document.addEventListener('keydown', (e) => {
+        const loader = document.getElementById('loader');
+        if (e.key === 'Escape' && loader && !loader.classList.contains('hidden')) {
+            revealSite();
+        }
+    });
+
+    // Start boot sequence
+    document.body.style.overflow = 'hidden';
+    runBootSequence();
 });
 
 // ===== Theme Toggle =====

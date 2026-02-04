@@ -20,13 +20,26 @@
 <body>
     <!-- Loading Screen -->
     <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-terminal">
-                <span class="loader-text">&gt;_</span>
-                <span class="loader-cursor">|</span>
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                </div>
+                <div class="terminal-title">guest@batyaboyo: ~ / portfolio_os</div>
             </div>
-            <p class="loader-status">Initializing...</p>
+            <div class="terminal-body" id="terminalBody">
+                <!-- Logs will be injected here -->
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">Guest:$</span>
+                <input type="text" id="terminalInput" autofocus spellcheck="false" autocomplete="off">
+                <span class="terminal-cursor">|</span>
+            </div>
         </div>
+        <button class="terminal-skip" id="skipLoader">Skip to Portfolio [Esc]</button>
+        <div class="scanlines"></div>
     </div>
 
     <!-- Custom Cursor -->

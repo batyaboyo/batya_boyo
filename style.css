@@ -42,53 +42,196 @@
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Loading Screen ===== */
+/* ===== Loading Screen & Terminal ===== */
 .loader {
     position: fixed;
     inset: 0;
-    background: var(--bg-primary);
+    background: #000;
     z-index: 9999;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    padding: 20px;
+    transition: all 0.8s cubic-bezier(0.8, 0, 0.2, 1);
 }
 
 .loader.hidden {
     opacity: 0;
     visibility: hidden;
+    transform: scale(1.1);
 }
 
-.loader-content {
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    background: rgba(10, 15, 10, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px var(--accent-dim);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.terminal-header {
+    background: #1a1a1a;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close {
+    background: #ff5f56;
+}
+
+.minimize {
+    background: #ffbd2e;
+}
+
+.maximize {
+    background: #27c93f;
+}
+
+.terminal-title {
+    flex: 1;
     text-align: center;
-}
-
-.loader-terminal {
     font-family: var(--font-mono);
-    font-size: 2rem;
-    color: var(--accent);
-    margin-bottom: 16px;
-}
-
-.loader-cursor {
-    animation: blink 0.7s infinite;
-}
-
-.loader-status {
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    margin-right: 60px;
+    /* Offset for controls */
+}
+
+.terminal-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--accent);
+}
+
+.terminal-line {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.terminal-line.success {
+    color: var(--accent);
+}
+
+.terminal-line.info {
+    color: #3399ff;
+}
+
+.terminal-line.warning {
+    color: var(--warning);
+}
+
+.terminal-line.error {
+    color: var(--danger);
+}
+
+.terminal-input-line {
+    padding: 10px 20px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terminal-prompt {
+    color: var(--text-secondary);
+    font-weight: bold;
+}
+
+#terminalInput {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    flex: 1;
+    caret-color: transparent;
+}
+
+.terminal-cursor {
+    width: 8px;
+    height: 1.2rem;
+    background: var(--accent);
+    display: inline-block;
+    animation: blink 0.8s infinite;
+}
+
+.terminal-skip {
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    z-index: 2;
+}
+
+.terminal-skip:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-dim);
+}
+
+/* CRT Scanlines Effect */
+.scanlines {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.15;
 }
 
 @keyframes blink {
 
     0%,
-    50% {
+    100% {
         opacity: 1;
     }
 
-    51%,
-    100% {
+    50% {
         opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .terminal-container {
+        height: 400px;
+    }
+
+    .terminal-body {
+        font-size: 0.85rem;
     }
 }
 
