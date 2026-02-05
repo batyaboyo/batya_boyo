@@ -1,46 +1,78 @@
-# Professional Portfolio v1.0 🚀
+# 🚀 Professional Portfolio v1.0 | Premium Hacker Aesthetic
 
-A high-performance, visually stunning personal portfolio designed for a **Cybersecurity Professional & Full-Stack Developer**. Built with a focus on professional aesthetics, security-inspired design, and seamless user experience.
+[![GitHub stars](https://img.shields.io/github/stars/batyaboyo/portfolio_v1?style=for-the-badge&color=2ea44f)](https://github.com/batyaboyo/portfolio_v1/stargazers)
+[![GitHub license](https://img.shields.io/github/license/batyaboyo/portfolio_v1?style=for-the-badge&color=007ec6)](https://github.com/batyaboyo/portfolio_v1/blob/main/LICENSE)
+[![Security Status](https://img.shields.io/badge/Security-Hardened-9cf?style=for-the-badge&logo=surveymonkey&logoColor=white)](https://github.com/batyaboyo/portfolio_v1)
+[![Tech Stack](https://img.shields.io/badge/Stack-Vanilla%20JS%20%2B%20CSS-yellow?style=for-the-badge)](https://github.com/batyaboyo/portfolio_v1)
+
+A high-performance, visually stunning personal portfolio designed for a **Cybersecurity Professional & Full-Stack Developer**. This project implements a "Premium Hacker" aesthetic, blending modern design trends with a technical edge.
+
+---
+
+## 📖 Table of Contents
+- [🎨 Design Philosophy](#-design-philosophy--ui)
+- [🛠 Tech Stack](#-tech-stack)
+- [📂 Project Categories](#-project-categories)
+- [🚀 Getting Started](#-getting-started)
+- [🔗 Contact](#-connect-with-me)
 
 ---
 
 ## 🎨 Design Philosophy & UI
-The portfolio implements a "Premium Hacker" aesthetic, blending modern design trends with a technical edge:
-- **Typography**: Utilizing `Space Grotesk` for headlines (modern/geometric) and `Inter` for body text (high readability).
-- **Color Palette**: Ultra-dark theme with curated "Hacker Green" accents and glassmorphism effects.
-- **Interactivity**: Smooth scroll animations, custom cursor glow, and magnetic project card interactions.
-- **Imagery**: 15+ curated thematic project images providing visual context for Security, Django, and IT systems.
-
-## 🛠 Tech Stack
-- **Structure**: Semantic HTML5.
-- **Styling**: Vanilla CSS3 (Custom Variables, Flexbox, CSS Grid).
-- **Logic**: Vanilla JavaScript (ES6+).
-- **Performance**: Zero external dependencies (no frameworks) for lightning-fast load times.
-- **Icons**: Optimized SVG icons for social and technical identifiers.
-
-## 📂 Key Sections
-### 1. Projects Showcase
-- **Total Projects**: 15 detailed projects across three categories.
-- **Filtering**: Real-time project filtering based on expertise area.
-- **Context Aware**: Each card explicitly defines the **Challenge** (Problem) and **Impact** (Solution).
-
-### 2. Professional Journey
-- A structured timeline detailing the career path from SOC Operations to Full-Stack development.
-
-### 3. Contact Integration
-- Secure contact form with client-side validation.
-- Direct links to professional networks (X, GitHub, LinkedIn).
-
-## 🚀 Getting Started
-1. Clone the repository: `git clone https://github.com/batyaboyo/portfolio_v1.git`
-2. Open `index.html` in any modern browser.
-3. No build step required!
-
-## 🔗 Connect With Me
-- **X (Twitter)**: [@batyaboyo](https://x.com/batyaboyo)
-- **GitHub**: [github.com/batyaboyo](https://github.com/batyaboyo)
-- **LinkedIn**: [linkedin.com/in/batyaboyo](https://linkedin.com/in/batyaboyo)
+The portfolio is built around a technical, security-inspired identity:
+- **Typography**: `Space Grotesk` (Modern/Geometric) for headlines & `Inter` (High Readability) for body text.
+- **Visuals**: Ultra-dark theme with "Hacker Green" accents, CRT scanlines, and glassmorphism.
+- **Experience**: Custom cursor glow, magnet-effect cards, and smooth-scroll terminal-inspired navigation.
 
 ---
+
+## 🛠 Tech Stack
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+---
+
+## 📂 Project Categories
+The portfolio showcases **15 detailed projects** structured for maximum clarity:
+
+| Category | Key Focus | Highlights |
+| :--- | :--- | :--- |
+| **Cybersecurity** | Defensive & Offensive | SME SOC-in-a-Box, Phishing Defense, IR Automation |
+| **Django Dev** | Secure Web Apps | Multi-Tenant SaaS, Incident Management, Auth Services |
+| **IT Systems** | Infrastructure | Network Monitoring, Server Hardening Toolkit, Backup Systems |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+None! This is a vanilla implementation designed for minimal friction.
+
+### Installation
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/batyaboyo/portfolio_v1.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd portfolio_v1
+   ```
+
+3. Launch `index.html` in your browser.
+
+---
+
+## 🔗 Connect With Me
+<p align="left">
+<a href="https://x.com/batyaboyo" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="batyaboyo" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/batyaboyo" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="batyaboyo" height="30" width="40" /></a>
+</p>
 
 Built with 💚 and security in mind by **Batya Boyo**.
