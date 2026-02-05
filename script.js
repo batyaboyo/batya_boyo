@@ -25,14 +25,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* 
     =============================
+    SCROLL LOGIC (Progress bar & Nav highlight)
+    ============================= 
+    */
+    const scrollProgress = document.getElementById('scrollProgress');
+    const navItems = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+        // 1. Scroll Progress
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        if (scrollProgress) scrollProgress.style.width = scrolled + "%";
+
+        // 2. Nav Highlight
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 250)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(li => {
+            li.classList.remove('active');
+            li.style.color = ''; // reset inline style
+            if (li.getAttribute('href') === `#${current}`) {
+                li.classList.add('active');
+                if (!li.classList.contains('btn-small')) {
+                    li.style.color = 'var(--accent-primary)';
+                }
+            }
+        });
+    });
+
+    /* 
+    =============================
        SCROLL ANIMATIONS (Intersection Observer)
     ============================= 
     */
-    // Add fade-in classes to elements we want to animate
-    const sections = document.querySelectorAll('.section');
-    const heroContent = document.querySelector('.hero-content');
-
-    // Initial state setup (CSS handles the actual opacity/transform)
+    // Initial state setup for sections
     sections.forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(30px)';
@@ -40,14 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const observerOptions = {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.1,
+        rootMargin: "0px"
     };
 
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
-
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
             observer.unobserve(entry.target);
@@ -123,33 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* 
     =============================
-       NAV HIGHLIGHT ON SCROLL
+       NAV HIGHLIGHT ON SCROLL (Handled in scroll logic above)
     ============================= 
     */
-    const navItems = document.querySelectorAll('.nav-links a');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const sections = document.querySelectorAll('section');
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navItems.forEach(li => {
-            li.style.color = ''; // reset
-            if (li.getAttribute('href').includes(current)) {
-                // exclude contact/resume btn from color override if needed
-                if (current !== '' && !li.classList.contains('btn-small')) {
-                    li.style.color = 'var(--accent-primary)';
-                }
-            }
-        });
-    });
 
     /* 
     =============================
@@ -285,22 +294,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 let response = '';
                 switch (command) {
                     case 'help':
-                        response = 'Available commands: <span class="highlight">whoami</span>, <span class="highlight">ls</span>, <span class="highlight">contact</span>, <span class="highlight">clear</span>';
+                        response = 'Available commands: <span class="highlight">whoami</span>, <span class="highlight">ls</span>, <span class="highlight">projects</span>, <span class="highlight">skills</span>, <span class="highlight">contact</span>, <span class="highlight">socials</span>, <span class="highlight">clear</span>';
                         break;
                     case 'whoami':
-                        response = 'Batya Boyo - Cybersecurity Analyst & Full-Stack Developer.';
+                        response = 'Batya Boyo - Cybersecurity Analyst & Full-Stack Developer on a mission to secure AI.';
                         break;
                     case 'ls':
                         response = 'alx-low_level_programming  alx-system_engineering-devops  alx-higher_level_programming  network-ids.py';
                         break;
+                    case 'projects':
+                        response = 'Featured: 1. SentinAL (LLM Firewall)  2. RustyC2  3. NIDS  4. SecureVault. Type names for info? (Not yet implemented)';
+                        break;
+                    case 'skills':
+                        response = 'Defensive: Splunk, ELK, DFIR | Offensive: Metasploit, Rust, Python | Web: Django, JS, PostgreSQL.';
+                        break;
                     case 'contact':
-                        response = 'Email: batztonnie@gmail.com | LinkedIn: linkedin.com/in/batyaboyo | X: twitter.com/batyaboyo | GitHub: github.com/batyaboyo';
+                        response = 'Email: batztonnie@gmail.com | Use the form below!';
+                        break;
+                    case 'socials':
+                        response = 'GitHub: @batyaboyo | LinkedIn: /in/batyaboyo | X: @batyaboyo';
                         break;
                     case 'clear':
                         terminalOutput.innerHTML = '';
                         break;
                     case '':
-                        // do nothing for empty enter
                         break;
                     default:
                         response = `Command not found: ${command}. Type 'help' for list.`;

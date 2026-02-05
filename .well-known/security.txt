@@ -1,0 +1,1 @@
+Contact: mailto:batztonnie@gmail.com\nExpires: 2027-02-05T11:00:00.000Z\nPreferred-Languages: en\nCanonical: https://batyaboyo.github.io/.well-known/security.txt
