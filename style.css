@@ -1049,7 +1049,7 @@ img {
     flex-wrap: wrap;
 }
 
-.category-btn {
+.filter-btn {
     padding: 8px 20px;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
@@ -1061,18 +1061,18 @@ img {
     font-size: 0.85rem;
 }
 
-[data-theme="light"] .category-btn {
+[data-theme="light"] .filter-btn {
     border-radius: 4px;
     border: 2px solid var(--border);
 }
 
-.category-btn.active {
+.filter-btn.active {
     background: var(--accent);
     color: #000;
     border-color: var(--accent);
 }
 
-[data-theme="light"] .category-btn.active {
+[data-theme="light"] .filter-btn.active {
     color: #fff;
     background: #008040;
 }
