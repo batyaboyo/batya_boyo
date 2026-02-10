@@ -263,14 +263,25 @@
                 <h2 class="section-title">Featured Projects</h2>
             </div>
             <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="security">Cybersecurity</button>
-                <button class="filter-btn" data-filter="django">Django</button>
-                <button class="filter-btn" data-filter="it">IT Systems</button>
+                <div class="filter-group">
+                    <span class="filter-label">Category:</span>
+                    <button class="filter-btn active" data-filter-type="category" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter-type="category" data-filter="security">Security</button>
+                    <button class="filter-btn" data-filter-type="category" data-filter="django">Django</button>
+                    <button class="filter-btn" data-filter-type="category" data-filter="it">IT Systems</button>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Level:</span>
+                    <button class="filter-btn active" data-filter-type="difficulty" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter-type="difficulty" data-filter="beginner">Beginner</button>
+                    <button class="filter-btn" data-filter-type="difficulty"
+                        data-filter="intermediate">Intermediate</button>
+                    <button class="filter-btn" data-filter-type="difficulty" data-filter="advanced">Advanced</button>
+                </div>
             </div>
             <div class="projects-grid">
                 <!-- Security Project 1 -->
-                <article class="project-card fade-in" data-category="security">
+                <article class="project-card fade-in" data-category="security" data-difficulty="advanced">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop"
                             alt="SME SOC" class="project-image">
@@ -320,7 +331,7 @@
                     </div>
                 </article>
                 <!-- Security Project 2 -->
-                <article class="project-card fade-in" data-category="security">
+                <article class="project-card fade-in" data-category="security" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop"
                             alt="Phishing Defense" class="project-image">
@@ -370,7 +381,7 @@
                     </div>
                 </article>
                 <!-- Security Project 3 -->
-                <article class="project-card fade-in" data-category="security">
+                <article class="project-card fade-in" data-category="security" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&h=400&fit=crop"
                             alt="IR Automation" class="project-image">
@@ -420,7 +431,7 @@
                     </div>
                 </article>
                 <!-- Security Project 4 -->
-                <article class="project-card fade-in" data-category="security">
+                <article class="project-card fade-in" data-category="security" data-difficulty="advanced">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
                             alt="Vuln Mgmt" class="project-image">
@@ -470,7 +481,7 @@
                     </div>
                 </article>
                 <!-- Security Project 5 -->
-                <article class="project-card fade-in" data-category="security">
+                <article class="project-card fade-in" data-category="security" data-difficulty="advanced">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=600&h=400&fit=crop"
                             alt="Detection Lab" class="project-image">
@@ -520,7 +531,7 @@
                     </div>
                 </article>
                 <!-- Django Project 1 -->
-                <article class="project-card fade-in" data-category="django">
+                <article class="project-card fade-in" data-category="django" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
                             alt="Case Mgmt" class="project-image">
@@ -570,7 +581,7 @@
                     </div>
                 </article>
                 <!-- Django Project 2 -->
-                <article class="project-card fade-in" data-category="django">
+                <article class="project-card fade-in" data-category="django" data-difficulty="advanced">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
                             alt="SaaS platform" class="project-image">
@@ -620,7 +631,7 @@
                     </div>
                 </article>
                 <!-- Django Project 3 -->
-                <article class="project-card fade-in" data-category="django">
+                <article class="project-card fade-in" data-category="django" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop"
                             alt="LMS" class="project-image">
@@ -670,7 +681,7 @@
                     </div>
                 </article>
                 <!-- Django Project 4 -->
-                <article class="project-card fade-in" data-category="django">
+                <article class="project-card fade-in" data-category="django" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop"
                             alt="Auth Service" class="project-image">
@@ -720,7 +731,7 @@
                     </div>
                 </article>
                 <!-- Django Project 5 -->
-                <article class="project-card fade-in" data-category="django">
+                <article class="project-card fade-in" data-category="django" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop"
                             alt="Vuln tracker" class="project-image">
@@ -770,7 +781,7 @@
                     </div>
                 </article>
                 <!-- IT Project 1 -->
-                <article class="project-card fade-in" data-category="it">
+                <article class="project-card fade-in" data-category="it" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=600&h=400&fit=crop"
                             alt="Ticketing" class="project-image">
@@ -820,7 +831,7 @@
                     </div>
                 </article>
                 <!-- IT Project 2 -->
-                <article class="project-card fade-in" data-category="it">
+                <article class="project-card fade-in" data-category="it" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop"
                             alt="Monitoring" class="project-image">
@@ -870,7 +881,7 @@
                     </div>
                 </article>
                 <!-- IT Project 3 -->
-                <article class="project-card fade-in" data-category="it">
+                <article class="project-card fade-in" data-category="it" data-difficulty="advanced">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop"
                             alt="Hardening" class="project-image">
@@ -920,7 +931,7 @@
                     </div>
                 </article>
                 <!-- IT Project 4 -->
-                <article class="project-card fade-in" data-category="it">
+                <article class="project-card fade-in" data-category="it" data-difficulty="intermediate">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop"
                             alt="Backup" class="project-image">
@@ -970,7 +981,7 @@
                     </div>
                 </article>
                 <!-- IT Project 5 -->
-                <article class="project-card fade-in" data-category="it">
+                <article class="project-card fade-in" data-category="it" data-difficulty="beginner">
                     <div class="project-image-container">
                         <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop"
                             alt="Knowledge Base" class="project-image">

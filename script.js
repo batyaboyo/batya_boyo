@@ -410,29 +410,48 @@ mobileMenu.querySelectorAll('.nav-link').forEach(link => {
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
+let activeFilters = {
+    category: 'all',
+    difficulty: 'all'
+};
+
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        const filterType = btn.dataset.filterType;
+        const filterValue = btn.dataset.filter;
+
+        // Update active state for buttons in the same group
+        const groupBtns = document.querySelectorAll(`.filter-btn[data-filter-type="${filterType}"]`);
+        groupBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        const filter = btn.dataset.filter;
-        let visibleIndex = 0;
+        // Update filter state
+        activeFilters[filterType] = filterValue;
 
-        projectCards.forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-                card.classList.remove('hidden');
-                // Apply staggered entry animation
-                card.style.animation = 'none';
-                card.offsetHeight; // Trigger reflow
-                card.style.animation = `fadeInUp 0.5s ease forwards ${visibleIndex * 0.1}s`;
-                visibleIndex++;
-            } else {
-                card.classList.add('hidden');
-                card.style.animation = 'none';
-            }
-        });
+        applyFilters();
     });
 });
+
+function applyFilters() {
+    let visibleIndex = 0;
+
+    projectCards.forEach(card => {
+        const matchesCategory = activeFilters.category === 'all' || card.dataset.category === activeFilters.category;
+        const matchesDifficulty = activeFilters.difficulty === 'all' || card.dataset.difficulty === activeFilters.difficulty;
+
+        if (matchesCategory && matchesDifficulty) {
+            card.classList.remove('hidden');
+            // Apply staggered entry animation
+            card.style.animation = 'none';
+            card.offsetHeight; // Trigger reflow
+            card.style.animation = `fadeInUp 0.5s ease forwards ${visibleIndex * 0.1}s`;
+            visibleIndex++;
+        } else {
+            card.classList.add('hidden');
+            card.style.animation = 'none';
+        }
+    });
+}
 
 // ===== Contact Form Validation =====
 const contactForm = document.getElementById('contactForm');

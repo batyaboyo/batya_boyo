@@ -1043,10 +1043,28 @@ img {
 
 .projects-filter {
     display: flex;
-    justify-content: center;
-    gap: 12px;
+    flex-direction: column;
+    gap: 20px;
     margin-bottom: 48px;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    letter-spacing: 1px;
+    margin-right: 8px;
 }
 
 .filter-btn {
