@@ -1175,6 +1175,24 @@ img {
     box-shadow: 0 0 10px rgba(255, 153, 51, 0.2);
 }
 
+.badge-beginner {
+    background: rgba(0, 243, 255, 0.15);
+    color: #00f3ff;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.badge-intermediate {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.badge-advanced {
+    background: rgba(255, 0, 76, 0.15);
+    color: #ff004c;
+    box-shadow: 0 0 10px rgba(255, 0, 76, 0.2);
+}
+
 .project-header {
     padding: 24px 24px 0;
     display: flex;
