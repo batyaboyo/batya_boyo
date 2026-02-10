@@ -453,6 +453,9 @@ function applyFilters() {
     });
 }
 
+// Initialize filters
+applyFilters();
+
 // ===== Contact Form Validation =====
 const contactForm = document.getElementById('contactForm');
 const formInputs = contactForm.querySelectorAll('input, textarea');
