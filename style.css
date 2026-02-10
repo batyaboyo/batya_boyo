@@ -1136,78 +1136,118 @@ img {
     opacity: 0.8;
 }
 
-.project-category {
+.project-badges {
     position: absolute;
     top: 16px;
     right: 16px;
-    padding: 6px 12px;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.badge {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--accent);
-    border: 1px solid var(--border);
-    z-index: 2;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--font-mono);
+}
+
+.badge-security {
+    background: rgba(0, 255, 65, 0.15);
+    color: #00ff41;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.badge-django {
+    background: rgba(51, 153, 255, 0.15);
+    color: #3399ff;
+    box-shadow: 0 0 10px rgba(51, 153, 255, 0.2);
+}
+
+.badge-it {
+    background: rgba(255, 153, 51, 0.15);
+    color: #ff9933;
+    box-shadow: 0 0 10px rgba(255, 153, 51, 0.2);
 }
 
 .project-header {
     padding: 24px 24px 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin-top: -40px;
+    align-items: center;
+    margin-top: -30px;
     position: relative;
     z-index: 3;
 }
 
 .project-icon {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: var(--transition);
+}
+
+.project-role {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    opacity: 0.8;
 }
 
 .project-content {
-    padding: 20px 24px 28px;
+    padding: 24px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-title {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     color: var(--text-primary);
 }
 
-.project-problem {
+.project-problem,
+.project-solution,
+.project-impact {
     font-size: 0.9rem;
-    color: var(--text-secondary);
     margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-.project-solution {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: 16px;
+.project-problem strong,
+.project-solution strong,
+.project-impact strong {
+    color: var(--accent);
+}
+
+.project-impact {
+    background: var(--accent-dim);
+    border-left: 2px solid var(--accent);
+    padding: 12px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 24px;
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 20px;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: 24px;
 }
 
 .tech-tag {
@@ -1215,7 +1255,7 @@ img {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 4px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-family: var(--font-mono);
     color: var(--text-secondary);
 }
@@ -1225,20 +1265,61 @@ img {
     gap: 12px;
 }
 
-.project-link {
-    display: inline-flex;
+.project-btn {
+    flex: 1;
+    display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent);
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    color: var(--text-primary);
     transition: all var(--transition);
-    font-family: var(--font-heading);
 }
 
-.project-link:hover {
-    gap: 10px;
-    letter-spacing: 0.5px;
+.project-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.project-btn:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.project-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.project-btn.btn-view {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+.project-btn.btn-view:hover {
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Category Specific Glows */
+.project-card[data-category="security"]:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 255, 65, 0.15);
+}
+
+.project-card[data-category="django"]:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(51, 153, 255, 0.15);
+}
+
+.project-card[data-category="it"]:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 153, 51, 0.15);
 }
 
 /* ===== Journey ===== */

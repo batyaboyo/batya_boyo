@@ -416,13 +416,19 @@ filterBtns.forEach(btn => {
         btn.classList.add('active');
 
         const filter = btn.dataset.filter;
+        let visibleIndex = 0;
 
         projectCards.forEach(card => {
             if (filter === 'all' || card.dataset.category === filter) {
                 card.classList.remove('hidden');
-                card.style.animation = 'fadeInUp 0.4s ease forwards';
+                // Apply staggered entry animation
+                card.style.animation = 'none';
+                card.offsetHeight; // Trigger reflow
+                card.style.animation = `fadeInUp 0.5s ease forwards ${visibleIndex * 0.1}s`;
+                visibleIndex++;
             } else {
                 card.classList.add('hidden');
+                card.style.animation = 'none';
             }
         });
     });
