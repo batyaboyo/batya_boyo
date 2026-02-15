@@ -1,3 +1,50 @@
+/* ===== Global Reset & Utils ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-dim);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 1rem 2rem;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* ===== CSS Variables ===== */
 :root {
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
@@ -1597,6 +1644,39 @@ img {
 .contact-form .btn {
     width: 100%;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-dots {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.loader-dots span {
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+    animation: dotPulse 1.4s infinite ease-in-out both;
+}
+
+.loader-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loader-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dotPulse {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
+
+.btn.is-loading .btn-text {
+    display: none;
+}
+
+.btn.is-loading .loader-dots {
+    display: flex;
 }
 
 /* ===== Footer ===== */

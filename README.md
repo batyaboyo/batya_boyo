@@ -37,13 +37,21 @@ The portfolio is built around a technical, security-inspired identity:
 ---
 
 ## 📂 Project Categories
-The portfolio showcases **15 detailed projects** structured for maximum clarity:
+The portfolio showcases **18 specialized projects** managed via a dynamic data-driven engine in `script.js`.
 
 | Category | Key Focus | Highlights |
 | :--- | :--- | :--- |
 | **Cybersecurity** | Defensive & Offensive | SME SOC-in-a-Box, Phishing Defense, IR Automation |
 | **Django Dev** | Secure Web Apps | Multi-Tenant SaaS, Incident Management, Auth Services |
 | **IT Systems** | Infrastructure | Network Monitoring, Server Hardening Toolkit, Backup Systems |
+
+## ✨ New Features (v1.1)
+- **BBOYO Terminal OS**: Interactive terminal boot sequence with user profiling (Hacker vs Standard mode).
+- **Data-Driven Projects**: Projects are now injected via JavaScript for better maintainability and performance.
+- **Dynamic Filtering**: Instant filtering by category and difficulty with staggered animations.
+- **Enhanced Accessibility**: Integrated skip links and ARIA labels for better keyboard navigation.
+- **Interactive Form**: Contact form with real-time validation and submission state simulation.
+- **Terminal Easter Eggs**: Try `neofetch`, `socials`, or `nmap` in the terminal for cool effects.
 
 ---
 
