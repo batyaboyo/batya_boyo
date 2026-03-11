@@ -19,6 +19,9 @@
 
 <body>
     <a href="#about" class="skip-link">Skip to main content</a>
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="terminal-container">
@@ -350,6 +353,105 @@
         </div>
     </section>
 
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Accreditations</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">🛡️</div>
+                    <div class="cert-info">
+                        <h3>OSCP</h3>
+                        <p>Offensive Security Certified Professional</p>
+                    </div>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">🎓</div>
+                    <div class="cert-info">
+                        <h3>eJPT</h3>
+                        <p>eLearnSecurity Junior Penetration Tester</p>
+                    </div>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-info">
+                        <h3>Security+</h3>
+                        <p>CompTIA Security+ (SY0-701)</p>
+                    </div>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">🏗️</div>
+                    <div class="cert-info">
+                        <h3>Django Specialist</h3>
+                        <p>Secure Web Development Certification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Endorsements</span>
+                <h2 class="section-title">What People Say</h2>
+            </div>
+            <div class="testimonial-slider-container">
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-item active">
+                        <p class="testimonial-text">"Batya's offensive security mindset is truly exceptional. He
+                            identified critical vulnerabilities that others missed."</p>
+                        <p class="testimonial-author">&mdash; Security Director, TechCorp</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-text">"The penetration testing reports provided were professional,
+                            detailed, and extremely actionable."</p>
+                        <p class="testimonial-author">&mdash; Lead Developer, FinSecure</p>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button id="prevBtn" class="slider-btn" aria-label="Previous testimonial">←</button>
+                    <button id="nextBtn" class="slider-btn" aria-label="Next testimonial">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Insights</span>
+                <h2 class="section-title">Latest Articles</h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card fade-in">
+                    <div class="blog-date">May 15, 2026</div>
+                    <h3>Understanding Zero Trust Architecture</h3>
+                    <p>Exploring the core principles of Zero Trust and how to implement them in modern environments.</p>
+                    <a href="#" class="blog-link">Read More &rarr;</a>
+                </article>
+                <article class="blog-card fade-in">
+                    <div class="blog-date">April 22, 2026</div>
+                    <h3>Securing Django REST Framework</h3>
+                    <p>A deep dive into authentication and authorization best practices for Django APIs.</p>
+                    <a href="#" class="blog-link">Read More &rarr;</a>
+                </article>
+                <article class="blog-card fade-in">
+                    <div class="blog-date">March 10, 2026</div>
+                    <h3>The Future of AI in Pentesting</h3>
+                    <p>How automated tools are changing the landscape of offensive security operations.</p>
+                    <a href="#" class="blog-link">Read More &rarr;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
@@ -427,6 +529,16 @@
             <path d="M18 15l-6-6-6 6" />
         </svg>
     </button>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be injected by script.js -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

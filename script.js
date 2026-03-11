@@ -1,3 +1,44 @@
+// ===== Matrix Background Animation =====
+const initMatrix = () => {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'matrixCanvas';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const characters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+    const fontSize = 16;
+    const columns = Math.floor(width / fontSize);
+    const drops = new Array(columns).fill(1);
+
+    const draw = () => {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, width, height);
+
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#0F0';
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = characters.charAt(Math.floor(Math.random() * characters.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    };
+
+    window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    });
+
+    setInterval(draw, 33);
+};
+
 // ===== Terminal Loader Engine =====
 const BOOT_LOGS = [
     { text: "[ OK ] Initializing Portfolio Kernel v1.0.4...", type: "success" },
@@ -101,7 +142,7 @@ const PROJECTS_DATA = [
         description: "A secure home penetration testing environment with attacker and target VMs in a virtualized network.",
         skills: ["Lab Setup", "Network Scanning", "Vulnerability Exploitation"],
         tools: ["Kali Linux", "Nmap", "Metasploit", "VirtualBox"],
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?w=600&h=400&fit=crop",
+        image: "assets/hacking_lab_1773229967478.png",
         icon: "🔬",
         github: "https://github.com/batyaboyo/hacking-lab",
         demo: "https://blog.batyaboyo.com/lab-setup"
@@ -113,7 +154,7 @@ const PROJECTS_DATA = [
         description: "Detailed exploitation walkthroughs and demos for SQL Injection, XSS, IDOR, and CSRF vulnerabilities.",
         skills: ["Web Security", "Exploitation Walkthroughs", "OWASP Standards"],
         tools: ["DVWA", "Juice Shop", "Burp Suite"],
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
+        image: "assets/owasp_demos_1773229996470.png",
         icon: "📔",
         github: "https://github.com/batyaboyo/owasp-demos",
         demo: "https://writeups.batyaboyo.com/owasp-top-10"
@@ -125,7 +166,7 @@ const PROJECTS_DATA = [
         description: "A recon automation tool featuring subdomain discovery, DNS lookup, and HTTP header analysis.",
         skills: ["Scripting", "Reconnaissance", "OSINT"],
         tools: ["Python", "Bash", "Subfinder", "Amass"],
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+        image: "assets/recon_toolkit_1773230035442.png",
         icon: "🔍",
         github: "https://github.com/batyaboyo/recon-toolkit",
         demo: "https://asciinema.org/a/recon-demo"
@@ -137,7 +178,7 @@ const PROJECTS_DATA = [
         description: "A custom Python script for IP discovery, open port detection, and service identification.",
         skills: ["Networking", "Scripting", "Scanning Techniques"],
         tools: ["Python Sockets", "Nmap Integration"],
-        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop",
+        image: "assets/network_scanner_1773230056700.png",
         icon: "🔌",
         github: "https://github.com/batyaboyo/network-scanner",
         demo: "https://asciinema.org/a/scanner-demo"
@@ -276,25 +317,116 @@ function renderProjects() {
                 </div>
 
                 <div class="project-links">
+                    <button class="project-btn btn-details" onclick="openProjectModal(${index})">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <span>Details</span>
+                    </button>
                     <a href="${project.github}" class="project-btn" target="_blank" aria-label="View ${project.title} on GitHub">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path>
                         </svg>
                         <span>GitHub</span>
                     </a>
-                    ${project.demo ? `
-                    <a href="${project.demo}" class="project-btn btn-view" target="_blank" aria-label="View ${project.title} Demo">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                        <span>Demo</span>
-                    </a>` : ''}
                 </div>
             </div>
         </article>
     `).join('');
+}
+
+// ===== Project Modal Logic =====
+function openProjectModal(index) {
+    const project = PROJECTS_DATA[index];
+    const modal = document.getElementById('projectModal');
+    const modalBody = document.getElementById('modalBody');
+    if (!modal || !modalBody) return;
+
+    modalBody.innerHTML = `
+        <div class="modal-header">
+            <h2 class="modal-title">${project.title}</h2>
+            <div class="modal-meta">
+                <span class="difficulty-badge" data-difficulty="${project.difficulty}">${project.difficulty}</span>
+                <span class="p-skill-tag">${project.category.toUpperCase()}</span>
+            </div>
+        </div>
+        <img src="${project.image}" alt="${project.title}" class="modal-image">
+        <div class="modal-description">
+            <h3>Overview</h3>
+            <p>${project.description}</p>
+            <div class="project-meta" style="margin-top: 32px;">
+                <div class="meta-section">
+                    <h4>Core Skills</h4>
+                    <div class="meta-tags">
+                        ${project.skills.map(skill => `<span class="p-skill-tag">${skill}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="meta-section" style="margin-top: 20px;">
+                    <h4>Technical Stack</h4>
+                    <div class="meta-tags">
+                        ${project.tools.map(tool => `<span class="p-tool-tag">${tool}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="margin-top: 48px; display: flex; gap: 16px;">
+                <a href="${project.github}" class="btn btn-primary" target="_blank">View Source Code</a>
+                ${project.demo ? `<a href="${project.demo}" class="btn btn-outline" target="_blank">Live Demo</a>` : ''}
+            </div>
+        </div>
+    `;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// ===== Scroll Progress Logic =====
+function updateScrollProgress() {
+    const progressBar = document.getElementById('scrollProgress');
+    if (!progressBar) return;
+
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + "%";
+}
+
+// ===== Testimonial Slider Logic =====
+let currentTestimonial = 0;
+function initTestimonials() {
+    const items = document.querySelectorAll('.testimonial-item');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    if (!items.length) return;
+
+    const showTestimonial = (index) => {
+        items.forEach(item => item.classList.remove('active'));
+        items[index].classList.add('active');
+    };
+
+    prevBtn?.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial - 1 + items.length) % items.length;
+        showTestimonial(currentTestimonial);
+    });
+
+    nextBtn?.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial + 1) % items.length;
+        showTestimonial(currentTestimonial);
+    });
+
+    // Auto-advance
+    setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % items.length;
+        showTestimonial(currentTestimonial);
+    }, 8000);
 }
 
 async function runBootSequence() {
@@ -373,6 +505,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     initAnimations();
     applyFilters();
+    initMatrix();
+    initTestimonials();
+
+    window.addEventListener('scroll', updateScrollProgress);
+    document.getElementById('modalClose')?.addEventListener('click', closeProjectModal);
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) closeProjectModal();
+    });
 
     const terminalInput = document.getElementById('terminalInput');
     const terminalContainer = document.querySelector('.terminal-container');
