@@ -95,271 +95,148 @@ const STANDARD_COMMANDS = {
 // ===== Projects Data =====
 const PROJECTS_DATA = [
     {
-        title: "SME SOC-in-a-Box",
-        category: "security",
-        difficulty: "advanced",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
-        icon: "🛡",
-        role: "Security Lead",
-        badges: [{ text: "Security Ops", class: "badge-security" }, { text: "Advanced", class: "badge-advanced" }],
-        problem: "Small businesses lack affordable security monitoring, leaving them vulnerable to undetected attacks.",
-        solution: "A lightweight, containerized SOC platform that provides enterprise-grade monitoring on a budget.",
-        impact: "Reduced detection time by 60% in pilot environments. Developed as a turnkey solution for IT teams.",
-        tech: ["Wazuh", "ELK Stack", "Docker"],
-        github: "#",
-        demo: "#"
+        title: "Personal Ethical Hacking Lab",
+        category: "it",
+        difficulty: "beginner",
+        description: "A secure home penetration testing environment with attacker and target VMs in a virtualized network.",
+        skills: ["Lab Setup", "Network Scanning", "Vulnerability Exploitation"],
+        tools: ["Kali Linux", "Nmap", "Metasploit", "VirtualBox"],
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?w=600&h=400&fit=crop",
+        icon: "🔬",
+        github: "https://github.com/batyaboyo/hacking-lab",
+        demo: "https://blog.batyaboyo.com/lab-setup"
     },
     {
-        title: "Phishing Defense Platform",
-        category: "security",
-        difficulty: "intermediate",
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
-        icon: "🎣",
-        role: "Developer",
-        badges: [{ text: "Awareness", class: "badge-security" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Organizations struggle to train employees effectively against evolving phishing tactics and track progress.",
-        solution: "An automated simulation platform that delivers targeted training based on real-world threat intelligence.",
-        impact: "Achieved a 45% reduction in click-through rates during quarterly testing for a 50-user organization.",
-        tech: ["Python", "Django", "PostgreSQL"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Incident Response Automation",
-        category: "security",
-        difficulty: "intermediate",
-        image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&h=400&fit=crop",
-        icon: "⚡",
-        role: "Security Engineer",
-        badges: [{ text: "IR Automation", class: "badge-security" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Manual incident response is too slow for modern threats, leading to analyst fatigue and missed signals.",
-        solution: "An automated enrichment pipeline that correlates IOCs across multiple intelligence feeds in real-time.",
-        impact: "Trimmed average response time from 40 minutes to under 5 minutes per incident. Integrated with MISP/VT.",
-        tech: ["Python", "MISP", "VirusTotal"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Vulnerability Management Dashboard",
-        category: "security",
-        difficulty: "advanced",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-        icon: "📊",
-        role: "Lead Analyst",
-        badges: [{ text: "Vuln Management", class: "badge-security" }, { text: "Advanced", class: "badge-advanced" }],
-        problem: "Security teams often lack visibility into real-time vulnerability status and remediation bottlenecks.",
-        solution: "A centralized analytics dashboard that tracks CVEs and maps remediation progress to asset criticality.",
-        impact: "Improved remediation SLA compliance by 35% through automated prioritization logic and executive reporting.",
-        tech: ["Django", "Chart.js", "OpenVAS"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Detection Engineering Lab",
-        category: "security",
-        difficulty: "advanced",
-        image: "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=600&h=400&fit=crop",
-        icon: "🔍",
-        role: "Research Lead",
-        badges: [{ text: "Detection Eng", class: "badge-security" }, { text: "Advanced", class: "badge-advanced" }],
-        problem: "Generic SIEM rules often overlook environment-specific attacker behaviors, leading to high false positives.",
-        solution: "A structured testing environment for custom Sigma rules mapped to specific MITRE ATT&CK techniques.",
-        impact: "Developed 20+ validated detection rules with a 90% reduction in false-positive noise compared to defaults.",
-        tech: ["Sigma", "Splunk", "YAML"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Secure Password Validator",
+        title: "OWASP Top 10 Demonstrations",
         category: "security",
         difficulty: "beginner",
+        description: "Detailed exploitation walkthroughs and demos for SQL Injection, XSS, IDOR, and CSRF vulnerabilities.",
+        skills: ["Web Security", "Exploitation Walkthroughs", "OWASP Standards"],
+        tools: ["DVWA", "Juice Shop", "Burp Suite"],
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
+        icon: "📔",
+        github: "https://github.com/batyaboyo/owasp-demos",
+        demo: "https://writeups.batyaboyo.com/owasp-top-10"
+    },
+    {
+        title: "Website Reconnaissance Toolkit",
+        category: "security",
+        difficulty: "beginner",
+        description: "A recon automation tool featuring subdomain discovery, DNS lookup, and HTTP header analysis.",
+        skills: ["Scripting", "Reconnaissance", "OSINT"],
+        tools: ["Python", "Bash", "Subfinder", "Amass"],
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+        icon: "🔍",
+        github: "https://github.com/batyaboyo/recon-toolkit",
+        demo: "https://asciinema.org/a/recon-demo"
+    },
+    {
+        title: "Network Scanner Tool",
+        category: "security",
+        difficulty: "beginner",
+        description: "A custom Python script for IP discovery, open port detection, and service identification.",
+        skills: ["Networking", "Scripting", "Scanning Techniques"],
+        tools: ["Python Sockets", "Nmap Integration"],
+        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop",
+        icon: "🔌",
+        github: "https://github.com/batyaboyo/network-scanner",
+        demo: "https://asciinema.org/a/scanner-demo"
+    },
+    {
+        title: "Web App Vulnerability Scanner",
+        category: "security",
+        difficulty: "intermediate",
+        description: "A scanner to detect XSS, SQL injection indicators, and insecure headers in target applications.",
+        skills: ["Web Security Testing", "HTTP Analysis", "Tool Development"],
+        tools: ["Python", "Requests", "BeautifulSoup"],
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
-        icon: "🔑",
-        role: "Junior Security Analyst",
-        badges: [{ text: "AppSec", class: "badge-security" }, { text: "Beginner", class: "badge-beginner" }],
-        problem: "Users frequently use predictable passwords that are vulnerable to brute-force attacks.",
-        solution: "A Python-based CLI tool that evaluates password entropy and complexity using pattern libraries.",
-        impact: "Increased local security awareness; used as a demo tool for training sessions.",
-        tech: ["Python", "Regex", "Zxcvbn"],
-        github: "#"
+        icon: "🛡️",
+        github: "https://github.com/batyaboyo/vuln-scanner",
+        demo: "https://youtu.be/vuln-scanner-demo"
     },
     {
-        title: "Incident Case Management System",
-        category: "django",
+        title: "Password Cracking Lab",
+        category: "it",
         difficulty: "intermediate",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
-        icon: "📋",
-        role: "Full-Stack Dev",
-        badges: [{ text: "Python/Django", class: "badge-django" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Security teams using fragmented tools for tracking incidents often lose critical context and evidence.",
-        solution: "A secure, Django-backed platform for centralized case management with automated evidence logging.",
-        impact: "Standardized IR workflows across teams, ensuring 100% data integrity for digital forensic artifacts.",
-        tech: ["Django", "PostgreSQL", "Celery"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Secure Multi-Tenant SaaS Platform",
-        category: "django",
-        difficulty: "advanced",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        icon: "🏢",
-        role: "Lead Architect",
-        badges: [{ text: "Architecture", class: "badge-django" }, { text: "Advanced", class: "badge-advanced" }],
-        problem: "Shared infrastructure in multi-tenant apps often introduces significant risks of cross-tenant data leakage.",
-        solution: "A robust SaaS architecture featuring strict schema-level isolation and role-based access controls.",
-        impact: "Provides a \"security-by-default\" framework that reduces deployment time for secure applications by 40%.",
-        tech: ["Django", "Tenants", "Stripe"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Cybersecurity Learning Platform",
-        category: "django",
-        difficulty: "intermediate",
-        image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop",
-        icon: "📚",
-        role: "Platform Dev",
-        badges: [{ text: "EdTech", class: "badge-django" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Aspiring security professionals struggle with fragmented resources and lack of structured hands-on practice.",
-        solution: "A gamified LMS that integrates curated learning paths with automated virtual lab provisioning.",
-        impact: "Successfully onboarded 100+ beta users with a 50% higher lab completion rate vs. static reading material.",
-        tech: ["Django", "JavaScript", "Docker"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Secure Authentication Microservice",
-        category: "django",
-        difficulty: "intermediate",
+        description: "A demonstration lab environment focusing on dictionary, brute force, and hash cracking attacks.",
+        skills: ["Password Cracking", "Hash Analysis", "Security Auditing"],
+        tools: ["Hashcat", "John the Ripper", "Wordlists"],
         image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop",
         icon: "🔑",
-        role: "Backend Dev",
-        badges: [{ text: "Microservices", class: "badge-django" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Repeatedly implementing complex authentication logic leads to security vulnerabilities and slow development cycles.",
-        solution: "A plug-and-play microservice handling MFA, JWT rotation, and session management with high-availability support.",
-        impact: "Simplified 10+ internal projects with drop-in secure auth, reducing total vulnerability surface by 25%.",
-        tech: ["Django REST", "JWT", "Redis"],
-        github: "#",
-        demo: "#"
+        github: "https://github.com/batyaboyo/cracking-lab",
+        demo: "https://research.batyaboyo.com/password-security"
     },
     {
-        title: "Vulnerability Tracking Web App",
+        title: "Vulnerable Django Application",
         category: "django",
         difficulty: "intermediate",
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
-        icon: "🐛",
-        role: "Lead Developer",
-        badges: [{ text: "AppSec", class: "badge-django" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Manual tracking of vulnerability remediation leads to communication gaps between security and IT teams.",
-        solution: "A collaborative web application that streamlines the lifecycle from discovery to remediation verification.",
-        impact: "Reduced time-to-remediate critical findings by 30% through automated notifications and asset ownership mapping.",
-        tech: ["Django", "HTMX", "PostgreSQL"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Recipe Manager Lite",
-        category: "django",
-        difficulty: "beginner",
+        description: "A custom Django app with intentional vulnerabilities to demonstrate secure vs insecure coding.",
+        skills: ["Secure Coding", "Vulnerability Analysis", "Remediation"],
+        tools: ["Python", "Django", "SQLmap"],
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
-        icon: "🍳",
-        role: "Junior Web Developer",
-        badges: [{ text: "Python/Django", class: "badge-django" }, { text: "Beginner", class: "badge-beginner" }],
-        problem: "Managing personal recipes across different platforms leads to data fragmentation.",
-        solution: "A simple CRUD application with category filtering, image uploads, and search functionality.",
-        impact: "Streamlined kitchen workflow; successfully managed 100+ entries in testing.",
-        tech: ["Django", "PostgreSQL", "Pillow"],
-        github: "#"
+        icon: "🏗️",
+        github: "https://github.com/batyaboyo/vulnerable-django",
+        demo: "https://vulnerable-app.batyaboyo.com"
     },
     {
-        title: "IT Support Ticketing System",
-        category: "it",
+        title: "Bug Bounty Recon Framework",
+        category: "security",
         difficulty: "intermediate",
-        image: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=600&h=400&fit=crop",
-        icon: "🎫",
-        role: "System Admin",
-        badges: [{ text: "IT Operations", class: "badge-it" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Fragmented support requests lead to missed SLAs and inconsistent service delivery.",
-        solution: "A smart ticketing system featuring automated priority queuing and real-time technician metrics.",
-        impact: "Cut average ticket resolution time by 20% by eliminating manual triage bottlenecks.",
-        tech: ["Django", "JavaScript", "SQLite"],
-        github: "#",
-        demo: "#"
+        description: "An automated framework for asset discovery, directory brute-forcing, and visual recon.",
+        skills: ["Automation", "Bug Bounty Methodology", "Asset Discovery"],
+        tools: ["Python", "GoBuster", "EyeWitness"],
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+        icon: "🎯",
+        github: "https://github.com/batyaboyo/bugbounty-recon",
+        demo: "https://asciinema.org/a/bb-recon"
     },
     {
-        title: "Network Monitoring & Alerting",
-        category: "it",
-        difficulty: "intermediate",
-        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop",
-        icon: "📡",
-        role: "Network Admin",
-        badges: [{ text: "Networking", class: "badge-it" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Proactive outage detection is missing, causing reliance on user reports for system downtime.",
-        solution: "A robust monitoring node performing high-frequency ICMP/TCP checks with instant SMS/Email escalation.",
-        impact: "Reduced unplanned downtime by 15% through early-warning detection of infrastructure strain.",
-        tech: ["Python", "Flask", "SNMP"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Linux Server Hardening Toolkit",
+        title: "CTF Writeup Repository",
         category: "it",
         difficulty: "advanced",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
-        icon: "🔒",
-        role: "Security Admin",
-        badges: [{ text: "Security Hardening", class: "badge-it" }, { text: "Advanced", class: "badge-advanced" }],
-        problem: "Default OS configurations are often insecure, leaving servers exposed to basic brute-force and exploit attempts.",
-        solution: "An automated hardening framework implementing CIS Benchmarks and custom security policies.",
-        impact: "Secured 50+ production nodes with baseline hardening in under 10 minutes per server.",
-        tech: ["Bash", "Ansible", "CIS Bench"],
-        github: "#",
-        demo: "#"
+        description: "A comprehensive repository of solved challenges from HackTheBox and TryHackMe with full walkthroughs.",
+        skills: ["Exploitation Process", "Technical Writing", "Problem Solving"],
+        tools: ["HackTheBox", "TryHackMe", "Markdown"],
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+        icon: "🏆",
+        github: "https://github.com/batyaboyo/ctf-writeups",
+        demo: "https://writeups.batyaboyo.com"
     },
     {
-        title: "Backup & Disaster Recovery",
+        title: "Active Directory Attack Lab",
         category: "it",
-        difficulty: "intermediate",
+        difficulty: "advanced",
+        description: "Simulation of enterprise network attacks including privilege escalation and lateral movement.",
+        skills: ["AD Pentesting", "Credential Dumping", "Lateral Movement"],
+        tools: ["BloodHound", "Mimikatz", "Impacket"],
+        image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop",
+        icon: "🏰",
+        github: "https://github.com/batyaboyo/ad-attack-lab",
+        demo: "https://youtu.be/ad-attack-demo"
+    },
+    {
+        title: "Web App Pentesting Report",
+        category: "security",
+        difficulty: "advanced",
+        description: "A full professional penetration test report including discovery, exploitation, and risk assessment.",
+        skills: ["Security Analysis", "Professional Reporting", "Risk Assessment"],
+        tools: ["Burp Suite", "SQLmap", "LaTeX"],
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
+        icon: "📝",
+        github: "https://github.com/batyaboyo/pentest-report",
+        demo: "https://reports.batyaboyo.com/sample-report"
+    },
+    {
+        title: "Automated Security Audit Tool",
+        category: "it",
+        difficulty: "advanced",
+        description: "Automated security audits for SSL/TLS, HTTP headers, and exposed services across large asset lists.",
+        skills: ["Python Scripting", "Security Auditing", "Automation"],
+        tools: ["Python", "Nmap", "SSLScan"],
         image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-        icon: "💾",
-        role: "Infrastructure Lead",
-        badges: [{ text: "Disaster Recovery", class: "badge-it" }, { text: "Intermediate", class: "badge-intermediate" }],
-        problem: "Organizations lack verified backup strategies, risking total data loss during hardware or security failures.",
-        solution: "A redundant backup pipeline with automated integrity checks and off-site cloud replication.",
-        impact: "Guaranteed 99.9% data availability. Successfully executed 5 recovery drills without data loss.",
-        tech: ["Bash", "rsync", "AWS S3"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Internal IT Knowledge Base",
-        category: "it",
-        difficulty: "beginner",
-        image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
-        icon: "📖",
-        role: "Content Lead",
-        badges: [{ text: "Documentation", class: "badge-it" }, { text: "Beginner", class: "badge-beginner" }],
-        problem: "Institutional knowledge is undocumented, leading to slow onboarding and inconsistent troubleshooting.",
-        solution: "A version-controlled, searchable documentation hub using Markdown for easy technical updates.",
-        impact: "Reduced internal support escalations by 15% through high-quality self-service runbooks.",
-        tech: ["Markdown", "Git", "VitePress"],
-        github: "#",
-        demo: "#"
-    },
-    {
-        title: "Automated Health Reporter",
-        category: "it",
-        difficulty: "beginner",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?w=600&h=400&fit=crop",
-        icon: "🚑",
-        role: "IT Support Assistant",
-        badges: [{ text: "IT Operations", class: "badge-it" }, { text: "Beginner", class: "badge-beginner" }],
-        problem: "Manually checking service availability across multiple local servers is tedious.",
-        solution: "A Bash script that probes local endpoints and generates a color-coded HTML status report.",
-        impact: "Reduced verification time by 80%; integrated into daily morning checks.",
-        tech: ["Bash", "Curl", "Linux"],
-        github: "#"
+        icon: "🤖",
+        github: "https://github.com/batyaboyo/security-audit-tool",
+        demo: "https://asciinema.org/a/audit-tool"
     }
 ];
 
@@ -374,31 +251,39 @@ function renderProjects() {
             <div class="project-image-container">
                 <img src="${project.image}" alt="${project.title}" class="project-image" loading="lazy">
                 <div class="project-image-overlay"></div>
-                <div class="project-badges">
-                    ${project.badges.map(badge => `<span class="badge ${badge.class}">${badge.text}</span>`).join('')}
+                <div class="difficulty-badge" data-difficulty="${project.difficulty}">
+                    ${project.difficulty}
                 </div>
-            </div>
-            <div class="project-header">
-                <div class="project-icon">${project.icon}</div>
-                <span class="project-role">${project.role}</span>
+                <div class="project-icon-overlay">${project.icon}</div>
             </div>
             <div class="project-content">
                 <h3 class="project-title">${project.title}</h3>
-                <p class="project-problem"><strong>Problem:</strong> ${project.problem}</p>
-                <p class="project-solution"><strong>Solution:</strong> ${project.solution}</p>
-                <p class="project-impact"><strong>Impact:</strong> ${project.impact}</p>
-                <div class="project-tech">
-                    ${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                <p class="project-description">${project.description}</p>
+                
+                <div class="project-meta">
+                    <div class="meta-section">
+                        <h4>Skills</h4>
+                        <div class="meta-tags">
+                            ${project.skills.map(skill => `<span class="p-skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="meta-section">
+                        <h4>Tools</h4>
+                        <div class="meta-tags">
+                            ${project.tools.map(tool => `<span class="p-tool-tag">${tool}</span>`).join('')}
+                        </div>
+                    </div>
                 </div>
+
                 <div class="project-links">
-                    <a href="${project.github}" class="project-btn" aria-label="View ${project.title} Code on GitHub">
+                    <a href="${project.github}" class="project-btn" target="_blank" aria-label="View ${project.title} on GitHub">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path>
                         </svg>
-                        <span>Code</span>
+                        <span>GitHub</span>
                     </a>
                     ${project.demo ? `
-                    <a href="${project.demo}" class="project-btn btn-view" aria-label="View ${project.title} Live Demo">
+                    <a href="${project.demo}" class="project-btn btn-view" target="_blank" aria-label="View ${project.title} Demo">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -629,10 +514,11 @@ document.addEventListener('mousemove', (e) => {
 
 // ===== Typing Animation =====
 const typingTexts = [
-    'Securing Systems.',
-    'Building Solutions.',
+    'Ethical Hacker.',
+    'Security Researcher.',
+    'Penetration Tester.',
     'Defending Networks.',
-    'Writing Clean Code.'
+    'Secure Coding Consultant.'
 ];
 let textIndex = 0;
 let charIndex = 0;
